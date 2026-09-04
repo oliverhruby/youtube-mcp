@@ -1,4 +1,4 @@
-# youtube-mcp-full
+# YouTube MCP Server
 
 [![GitHub release](https://img.shields.io/github/v/release/oliverhruby/youtube-mcp.svg?label=release)](https://github.com/oliverhruby/youtube-mcp/releases)
 [![Quality gates](https://img.shields.io/github/actions/workflow/status/oliverhruby/youtube-mcp/quality-gates.yml.svg?label=quality%20gates)](https://github.com/oliverhruby/youtube-mcp/actions/workflows/quality-gates.yml)
