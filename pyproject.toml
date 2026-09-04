@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "youtube-mcp-full"
+version = "0.1.0"
+description = "Full-coverage YouTube MCP server for YouTube Data API v3, Analytics API, and Reporting API."
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "Oliver Hruby" }]
+requires-python = ">=3.10"
+keywords = ["mcp", "youtube", "analytics", "creator", "ai", "agent"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Internet",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+dependencies = [
+    "mcp<2",
+    "google-api-python-client>=2.170.0",
+    "google-auth-oauthlib>=1.2.2",
+    "google-auth-httplib2>=0.2.0",
+    "python-dotenv>=1.0.1",
+]
+
+[project.urls]
+Homepage = "https://github.com/oliverhruby/youtube-mcp"
+Repository = "https://github.com/oliverhruby/youtube-mcp"
+Issues = "https://github.com/oliverhruby/youtube-mcp/issues"
+
+[project.scripts]
+youtube-mcp-full = "youtube_mcp:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

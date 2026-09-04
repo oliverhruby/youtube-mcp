@@ -1,0 +1,9 @@
+# youtube-mcp-full requires Python 3.10+.
+#
+# For end users:
+#   uvx youtube-mcp-full
+#   # or
+#   pip install youtube-mcp-full
+#
+# For development from source:
+-e .
