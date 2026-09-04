@@ -1,5 +1,15 @@
 # youtube-mcp-full
 
+[![PyPI version](https://img.shields.io/pypi/v/youtube-mcp-full.svg)](https://pypi.org/project/youtube-mcp-full/)
+[![Python versions](https://img.shields.io/pypi/pyversions/youtube-mcp-full.svg)](https://pypi.org/project/youtube-mcp-full/)
+[![Downloads](https://img.shields.io/pypi/dm/youtube-mcp-full.svg)](https://pypi.org/project/youtube-mcp-full/)
+[![License](https://img.shields.io/github/license/oliverhruby/youtube-mcp.svg)](https://github.com/oliverhruby/youtube-mcp/blob/main/LICENSE)
+[![Quality gates](https://img.shields.io/github/actions/workflow/status/oliverhruby/youtube-mcp/quality-gates.yml.svg)](https://github.com/oliverhruby/youtube-mcp/actions/workflows/quality-gates.yml)
+[![Security](https://img.shields.io/github/actions/workflow/status/oliverhruby/youtube-mcp/security.yml.svg)](https://github.com/oliverhruby/youtube-mcp/actions/workflows/security.yml)
+[![Container security](https://img.shields.io/github/actions/workflow/status/oliverhruby/youtube-mcp/container-security.yml.svg)](https://github.com/oliverhruby/youtube-mcp/actions/workflows/container-security.yml)
+[![Coverage drift](https://img.shields.io/github/actions/workflow/status/oliverhruby/youtube-mcp/coverage-drift.yml.svg)](https://github.com/oliverhruby/youtube-mcp/actions/workflows/coverage-drift.yml)
+[![Dependabot](https://img.shields.io/badge/dependabot-enabled-025e8c.svg)](https://github.com/oliverhruby/youtube-mcp/security/dependabot)
+
 A Model Context Protocol (MCP) server that provides near 1:1 coverage of the
 YouTube Data API v3, YouTube Analytics API, and YouTube Reporting API as MCP
 tools for AI agents such as opencode, Claude, Cursor and any other MCP client.
