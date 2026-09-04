@@ -61,7 +61,6 @@ This project deliberately goes further:
 | Typed convenience tools | ❌ | ✅ (10) | ✅ (40) | ✅ (16) |
 | Docker support | ❌ | ❌ | ❌ | ✅ |
 | HTTP transport + optional auth | ❌ | ❌ | ❌ | ✅ |
-| **OIDC trusted publishing** | ❌ | ❌ | ❌ | ✅ |
 
 **Key differentiators:**
 
@@ -76,8 +75,8 @@ This project deliberately goes further:
   Analytics/Reporting access that require user authorization — not just API key
   read-only access.
 - **Production infrastructure.** Docker with HEALTHCHECK, optional HTTP
-  transport with bearer token auth, OIDC trusted publishing (no PyPI token
-  to manage), Trivy container scanning, and dependency audit in CI.
+  transport with bearer token auth, Trivy container scanning, and dependency
+  audit in CI.
 
 ---
 
@@ -339,7 +338,7 @@ Run `list_supported_apis` to see the full count and per-API breakdown.
 
 ## Contributing
 
-Contributor and maintainer guidance is in `CONTRIBUTING.md`.
+Contributor and maintainer guidance is in [CONTRIBUTING.md](CONTRIBUTING.md).
 
 - Contribution workflow and local setup
 - Architecture and tool layers
