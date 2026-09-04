@@ -23,6 +23,13 @@ Quick checks:
 ```bash
 python -m py_compile src/youtube_mcp/__init__.py
 python -m youtube_mcp
+pytest -m "not live"
+```
+
+Live API checks (optional, requires credentials):
+
+```bash
+YOUTUBE_API_KEY=... pytest -m live
 ```
 
 ## Architecture and implementation

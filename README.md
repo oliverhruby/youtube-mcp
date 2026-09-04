@@ -22,6 +22,7 @@ Initial scaffold is in place with:
 - Docker support
 - CI quality and security workflows
 - release workflows for PyPI, GitHub Releases, and GHCR
+- generated endpoint matrix with near 1:1 tool wrappers
 
 ## Install
 
@@ -51,6 +52,26 @@ python -m youtube_mcp
 - `health`: basic server runtime info
 - `auth_status`: env-based auth configuration status
 - `list_supported_apis`: declared API surfaces and current scaffold status
+- generated endpoint tools from `src/youtube_mcp/data/youtube_api_operations.json`
+
+## Testing
+
+Standard testing approach used across this MCP portfolio:
+
+- unit tests (no live credentials required)
+- optional live integration tests gated by marker and env vars
+
+Run unit tests:
+
+```bash
+pytest -m "not live"
+```
+
+Run live tests (requires `YOUTUBE_API_KEY` at minimum):
+
+```bash
+pytest -m live
+```
 
 ## Environment variables
 

@@ -25,6 +25,12 @@ jobs:
       - name: Install package from source
         run: python -m pip install --upgrade pip && python -m pip install .
 
+      - name: Install test dependencies
+        run: python -m pip install pytest
+
+      - name: Run unit tests
+        run: pytest -m "not live"
+
   docker-mcp-smoke:
     runs-on: ubuntu-latest
     steps:

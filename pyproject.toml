@@ -41,3 +41,6 @@ youtube-mcp-full = "youtube_mcp:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.setuptools.package-data]
+youtube_mcp = ["data/*.json"]

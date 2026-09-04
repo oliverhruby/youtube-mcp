@@ -1,0 +1,2783 @@
+[
+  {
+    "api": "youtube_analytics_v2",
+    "service_name": "youtubeAnalytics",
+    "method_id": "youtubeAnalytics.groupItems.delete",
+    "tool_name": "youtube_analytics_v2_groupitems_delete",
+    "resource_chain": [
+      "groupItems"
+    ],
+    "method_name": "delete",
+    "http_method": "DELETE",
+    "path": "v2/groupItems",
+    "description": "Removes an item from a group.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [],
+    "all_parameters": [
+      "id",
+      "onBehalfOfContentOwner"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube",
+      "https://www.googleapis.com/auth/youtube.readonly",
+      "https://www.googleapis.com/auth/youtubepartner",
+      "https://www.googleapis.com/auth/yt-analytics-monetary.readonly",
+      "https://www.googleapis.com/auth/yt-analytics.readonly"
+    ]
+  },
+  {
+    "api": "youtube_analytics_v2",
+    "service_name": "youtubeAnalytics",
+    "method_id": "youtubeAnalytics.groupItems.insert",
+    "tool_name": "youtube_analytics_v2_groupitems_insert",
+    "resource_chain": [
+      "groupItems"
+    ],
+    "method_name": "insert",
+    "http_method": "POST",
+    "path": "v2/groupItems",
+    "description": "Creates a group item.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [],
+    "all_parameters": [
+      "onBehalfOfContentOwner"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube",
+      "https://www.googleapis.com/auth/youtube.readonly",
+      "https://www.googleapis.com/auth/youtubepartner",
+      "https://www.googleapis.com/auth/yt-analytics-monetary.readonly",
+      "https://www.googleapis.com/auth/yt-analytics.readonly"
+    ]
+  },
+  {
+    "api": "youtube_analytics_v2",
+    "service_name": "youtubeAnalytics",
+    "method_id": "youtubeAnalytics.groupItems.list",
+    "tool_name": "youtube_analytics_v2_groupitems_list",
+    "resource_chain": [
+      "groupItems"
+    ],
+    "method_name": "list",
+    "http_method": "GET",
+    "path": "v2/groupItems",
+    "description": "Returns a collection of group items that match the API request parameters.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [],
+    "all_parameters": [
+      "groupId",
+      "onBehalfOfContentOwner"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube",
+      "https://www.googleapis.com/auth/youtube.readonly",
+      "https://www.googleapis.com/auth/youtubepartner",
+      "https://www.googleapis.com/auth/yt-analytics-monetary.readonly",
+      "https://www.googleapis.com/auth/yt-analytics.readonly"
+    ]
+  },
+  {
+    "api": "youtube_analytics_v2",
+    "service_name": "youtubeAnalytics",
+    "method_id": "youtubeAnalytics.groups.delete",
+    "tool_name": "youtube_analytics_v2_groups_delete",
+    "resource_chain": [
+      "groups"
+    ],
+    "method_name": "delete",
+    "http_method": "DELETE",
+    "path": "v2/groups",
+    "description": "Deletes a group.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [],
+    "all_parameters": [
+      "id",
+      "onBehalfOfContentOwner"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube",
+      "https://www.googleapis.com/auth/youtube.readonly",
+      "https://www.googleapis.com/auth/youtubepartner",
+      "https://www.googleapis.com/auth/yt-analytics-monetary.readonly",
+      "https://www.googleapis.com/auth/yt-analytics.readonly"
+    ]
+  },
+  {
+    "api": "youtube_analytics_v2",
+    "service_name": "youtubeAnalytics",
+    "method_id": "youtubeAnalytics.groups.insert",
+    "tool_name": "youtube_analytics_v2_groups_insert",
+    "resource_chain": [
+      "groups"
+    ],
+    "method_name": "insert",
+    "http_method": "POST",
+    "path": "v2/groups",
+    "description": "Creates a group.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [],
+    "all_parameters": [
+      "onBehalfOfContentOwner"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube",
+      "https://www.googleapis.com/auth/youtube.readonly",
+      "https://www.googleapis.com/auth/youtubepartner",
+      "https://www.googleapis.com/auth/yt-analytics-monetary.readonly",
+      "https://www.googleapis.com/auth/yt-analytics.readonly"
+    ]
+  },
+  {
+    "api": "youtube_analytics_v2",
+    "service_name": "youtubeAnalytics",
+    "method_id": "youtubeAnalytics.groups.list",
+    "tool_name": "youtube_analytics_v2_groups_list",
+    "resource_chain": [
+      "groups"
+    ],
+    "method_name": "list",
+    "http_method": "GET",
+    "path": "v2/groups",
+    "description": "Returns a collection of groups that match the API request parameters. For example, you can retrieve all groups that the authenticated user owns, or you can retrieve one or more groups by their unique IDs.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [],
+    "all_parameters": [
+      "id",
+      "mine",
+      "onBehalfOfContentOwner",
+      "pageToken"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube",
+      "https://www.googleapis.com/auth/youtube.readonly",
+      "https://www.googleapis.com/auth/youtubepartner",
+      "https://www.googleapis.com/auth/yt-analytics-monetary.readonly",
+      "https://www.googleapis.com/auth/yt-analytics.readonly"
+    ]
+  },
+  {
+    "api": "youtube_analytics_v2",
+    "service_name": "youtubeAnalytics",
+    "method_id": "youtubeAnalytics.groups.update",
+    "tool_name": "youtube_analytics_v2_groups_update",
+    "resource_chain": [
+      "groups"
+    ],
+    "method_name": "update",
+    "http_method": "PUT",
+    "path": "v2/groups",
+    "description": "Modifies a group. For example, you could change a group's title.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [],
+    "all_parameters": [
+      "onBehalfOfContentOwner"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube",
+      "https://www.googleapis.com/auth/youtube.readonly",
+      "https://www.googleapis.com/auth/youtubepartner",
+      "https://www.googleapis.com/auth/yt-analytics-monetary.readonly",
+      "https://www.googleapis.com/auth/yt-analytics.readonly"
+    ]
+  },
+  {
+    "api": "youtube_analytics_v2",
+    "service_name": "youtubeAnalytics",
+    "method_id": "youtubeAnalytics.reports.query",
+    "tool_name": "youtube_analytics_v2_reports_query",
+    "resource_chain": [
+      "reports"
+    ],
+    "method_name": "query",
+    "http_method": "GET",
+    "path": "v2/reports",
+    "description": "Retrieve your YouTube Analytics reports.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [],
+    "all_parameters": [
+      "currency",
+      "dimensions",
+      "endDate",
+      "filters",
+      "ids",
+      "includeHistoricalChannelData",
+      "maxResults",
+      "metrics",
+      "sort",
+      "startDate",
+      "startIndex"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube",
+      "https://www.googleapis.com/auth/youtube.readonly",
+      "https://www.googleapis.com/auth/youtubepartner",
+      "https://www.googleapis.com/auth/yt-analytics-monetary.readonly",
+      "https://www.googleapis.com/auth/yt-analytics.readonly"
+    ]
+  },
+  {
+    "api": "youtube_data_v3",
+    "service_name": "youtube",
+    "method_id": "youtube.abuseReports.insert",
+    "tool_name": "youtube_data_v3_abusereports_insert",
+    "resource_chain": [
+      "abuseReports"
+    ],
+    "method_name": "insert",
+    "http_method": "POST",
+    "path": "youtube/v3/abuseReports",
+    "description": "Inserts a new resource into this collection.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [
+      "part"
+    ],
+    "all_parameters": [
+      "part"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube",
+      "https://www.googleapis.com/auth/youtube.force-ssl"
+    ]
+  },
+  {
+    "api": "youtube_data_v3",
+    "service_name": "youtube",
+    "method_id": "youtube.activities.list",
+    "tool_name": "youtube_data_v3_activities_list",
+    "resource_chain": [
+      "activities"
+    ],
+    "method_name": "list",
+    "http_method": "GET",
+    "path": "youtube/v3/activities",
+    "description": "Retrieves a list of resources, possibly filtered.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [
+      "part"
+    ],
+    "all_parameters": [
+      "channelId",
+      "home",
+      "maxResults",
+      "mine",
+      "pageToken",
+      "part",
+      "publishedAfter",
+      "publishedBefore",
+      "regionCode"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube",
+      "https://www.googleapis.com/auth/youtube.force-ssl",
+      "https://www.googleapis.com/auth/youtube.readonly"
+    ]
+  },
+  {
+    "api": "youtube_data_v3",
+    "service_name": "youtube",
+    "method_id": "youtube.captions.delete",
+    "tool_name": "youtube_data_v3_captions_delete",
+    "resource_chain": [
+      "captions"
+    ],
+    "method_name": "delete",
+    "http_method": "DELETE",
+    "path": "youtube/v3/captions",
+    "description": "Deletes a resource.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [
+      "id"
+    ],
+    "all_parameters": [
+      "id",
+      "onBehalfOf",
+      "onBehalfOfContentOwner"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube.force-ssl",
+      "https://www.googleapis.com/auth/youtubepartner"
+    ]
+  },
+  {
+    "api": "youtube_data_v3",
+    "service_name": "youtube",
+    "method_id": "youtube.captions.download",
+    "tool_name": "youtube_data_v3_captions_download",
+    "resource_chain": [
+      "captions"
+    ],
+    "method_name": "download",
+    "http_method": "GET",
+    "path": "youtube/v3/captions/{id}",
+    "description": "Downloads a caption track.",
+    "supports_media_upload": false,
+    "supports_media_download": true,
+    "required_parameters": [
+      "id"
+    ],
+    "all_parameters": [
+      "id",
+      "onBehalfOf",
+      "onBehalfOfContentOwner",
+      "tfmt",
+      "tlang"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube.force-ssl",
+      "https://www.googleapis.com/auth/youtubepartner"
+    ]
+  },
+  {
+    "api": "youtube_data_v3",
+    "service_name": "youtube",
+    "method_id": "youtube.captions.insert",
+    "tool_name": "youtube_data_v3_captions_insert",
+    "resource_chain": [
+      "captions"
+    ],
+    "method_name": "insert",
+    "http_method": "POST",
+    "path": "youtube/v3/captions",
+    "description": "Inserts a new resource into this collection.",
+    "supports_media_upload": true,
+    "supports_media_download": false,
+    "required_parameters": [
+      "part"
+    ],
+    "all_parameters": [
+      "onBehalfOf",
+      "onBehalfOfContentOwner",
+      "part",
+      "sync"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube.force-ssl",
+      "https://www.googleapis.com/auth/youtubepartner"
+    ]
+  },
+  {
+    "api": "youtube_data_v3",
+    "service_name": "youtube",
+    "method_id": "youtube.captions.list",
+    "tool_name": "youtube_data_v3_captions_list",
+    "resource_chain": [
+      "captions"
+    ],
+    "method_name": "list",
+    "http_method": "GET",
+    "path": "youtube/v3/captions",
+    "description": "Retrieves a list of resources, possibly filtered.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [
+      "part",
+      "videoId"
+    ],
+    "all_parameters": [
+      "id",
+      "onBehalfOf",
+      "onBehalfOfContentOwner",
+      "part",
+      "videoId"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube.force-ssl",
+      "https://www.googleapis.com/auth/youtubepartner"
+    ]
+  },
+  {
+    "api": "youtube_data_v3",
+    "service_name": "youtube",
+    "method_id": "youtube.captions.update",
+    "tool_name": "youtube_data_v3_captions_update",
+    "resource_chain": [
+      "captions"
+    ],
+    "method_name": "update",
+    "http_method": "PUT",
+    "path": "youtube/v3/captions",
+    "description": "Updates an existing resource.",
+    "supports_media_upload": true,
+    "supports_media_download": false,
+    "required_parameters": [
+      "part"
+    ],
+    "all_parameters": [
+      "onBehalfOf",
+      "onBehalfOfContentOwner",
+      "part",
+      "sync"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube.force-ssl",
+      "https://www.googleapis.com/auth/youtubepartner"
+    ]
+  },
+  {
+    "api": "youtube_data_v3",
+    "service_name": "youtube",
+    "method_id": "youtube.channelBanners.insert",
+    "tool_name": "youtube_data_v3_channelbanners_insert",
+    "resource_chain": [
+      "channelBanners"
+    ],
+    "method_name": "insert",
+    "http_method": "POST",
+    "path": "youtube/v3/channelBanners/insert",
+    "description": "Inserts a new resource into this collection.",
+    "supports_media_upload": true,
+    "supports_media_download": false,
+    "required_parameters": [],
+    "all_parameters": [
+      "channelId",
+      "onBehalfOfContentOwner",
+      "onBehalfOfContentOwnerChannel"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube",
+      "https://www.googleapis.com/auth/youtube.force-ssl",
+      "https://www.googleapis.com/auth/youtube.upload"
+    ]
+  },
+  {
+    "api": "youtube_data_v3",
+    "service_name": "youtube",
+    "method_id": "youtube.channels.list",
+    "tool_name": "youtube_data_v3_channels_list",
+    "resource_chain": [
+      "channels"
+    ],
+    "method_name": "list",
+    "http_method": "GET",
+    "path": "youtube/v3/channels",
+    "description": "Retrieves a list of resources, possibly filtered.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [
+      "part"
+    ],
+    "all_parameters": [
+      "categoryId",
+      "forHandle",
+      "forUsername",
+      "hl",
+      "id",
+      "managedByMe",
+      "maxResults",
+      "mine",
+      "mySubscribers",
+      "onBehalfOfContentOwner",
+      "pageToken",
+      "part"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube",
+      "https://www.googleapis.com/auth/youtube.force-ssl",
+      "https://www.googleapis.com/auth/youtube.readonly",
+      "https://www.googleapis.com/auth/youtubepartner",
+      "https://www.googleapis.com/auth/youtubepartner-channel-audit"
+    ]
+  },
+  {
+    "api": "youtube_data_v3",
+    "service_name": "youtube",
+    "method_id": "youtube.channels.update",
+    "tool_name": "youtube_data_v3_channels_update",
+    "resource_chain": [
+      "channels"
+    ],
+    "method_name": "update",
+    "http_method": "PUT",
+    "path": "youtube/v3/channels",
+    "description": "Updates an existing resource.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [
+      "part"
+    ],
+    "all_parameters": [
+      "onBehalfOfContentOwner",
+      "part"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube",
+      "https://www.googleapis.com/auth/youtube.force-ssl",
+      "https://www.googleapis.com/auth/youtubepartner"
+    ]
+  },
+  {
+    "api": "youtube_data_v3",
+    "service_name": "youtube",
+    "method_id": "youtube.channelSections.delete",
+    "tool_name": "youtube_data_v3_channelsections_delete",
+    "resource_chain": [
+      "channelSections"
+    ],
+    "method_name": "delete",
+    "http_method": "DELETE",
+    "path": "youtube/v3/channelSections",
+    "description": "Deletes a resource.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [
+      "id"
+    ],
+    "all_parameters": [
+      "id",
+      "onBehalfOfContentOwner"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube",
+      "https://www.googleapis.com/auth/youtube.force-ssl",
+      "https://www.googleapis.com/auth/youtubepartner"
+    ]
+  },
+  {
+    "api": "youtube_data_v3",
+    "service_name": "youtube",
+    "method_id": "youtube.channelSections.insert",
+    "tool_name": "youtube_data_v3_channelsections_insert",
+    "resource_chain": [
+      "channelSections"
+    ],
+    "method_name": "insert",
+    "http_method": "POST",
+    "path": "youtube/v3/channelSections",
+    "description": "Inserts a new resource into this collection.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [
+      "part"
+    ],
+    "all_parameters": [
+      "onBehalfOfContentOwner",
+      "onBehalfOfContentOwnerChannel",
+      "part"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube",
+      "https://www.googleapis.com/auth/youtube.force-ssl",
+      "https://www.googleapis.com/auth/youtubepartner"
+    ]
+  },
+  {
+    "api": "youtube_data_v3",
+    "service_name": "youtube",
+    "method_id": "youtube.channelSections.list",
+    "tool_name": "youtube_data_v3_channelsections_list",
+    "resource_chain": [
+      "channelSections"
+    ],
+    "method_name": "list",
+    "http_method": "GET",
+    "path": "youtube/v3/channelSections",
+    "description": "Retrieves a list of resources, possibly filtered.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [
+      "part"
+    ],
+    "all_parameters": [
+      "channelId",
+      "hl",
+      "id",
+      "mine",
+      "onBehalfOfContentOwner",
+      "part"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube",
+      "https://www.googleapis.com/auth/youtube.force-ssl",
+      "https://www.googleapis.com/auth/youtube.readonly",
+      "https://www.googleapis.com/auth/youtubepartner"
+    ]
+  },
+  {
+    "api": "youtube_data_v3",
+    "service_name": "youtube",
+    "method_id": "youtube.channelSections.update",
+    "tool_name": "youtube_data_v3_channelsections_update",
+    "resource_chain": [
+      "channelSections"
+    ],
+    "method_name": "update",
+    "http_method": "PUT",
+    "path": "youtube/v3/channelSections",
+    "description": "Updates an existing resource.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [
+      "part"
+    ],
+    "all_parameters": [
+      "onBehalfOfContentOwner",
+      "part"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube",
+      "https://www.googleapis.com/auth/youtube.force-ssl",
+      "https://www.googleapis.com/auth/youtubepartner"
+    ]
+  },
+  {
+    "api": "youtube_data_v3",
+    "service_name": "youtube",
+    "method_id": "youtube.comments.delete",
+    "tool_name": "youtube_data_v3_comments_delete",
+    "resource_chain": [
+      "comments"
+    ],
+    "method_name": "delete",
+    "http_method": "DELETE",
+    "path": "youtube/v3/comments",
+    "description": "Deletes a resource.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [
+      "id"
+    ],
+    "all_parameters": [
+      "id"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube.force-ssl"
+    ]
+  },
+  {
+    "api": "youtube_data_v3",
+    "service_name": "youtube",
+    "method_id": "youtube.comments.insert",
+    "tool_name": "youtube_data_v3_comments_insert",
+    "resource_chain": [
+      "comments"
+    ],
+    "method_name": "insert",
+    "http_method": "POST",
+    "path": "youtube/v3/comments",
+    "description": "Inserts a new resource into this collection.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [
+      "part"
+    ],
+    "all_parameters": [
+      "part"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube.force-ssl"
+    ]
+  },
+  {
+    "api": "youtube_data_v3",
+    "service_name": "youtube",
+    "method_id": "youtube.comments.list",
+    "tool_name": "youtube_data_v3_comments_list",
+    "resource_chain": [
+      "comments"
+    ],
+    "method_name": "list",
+    "http_method": "GET",
+    "path": "youtube/v3/comments",
+    "description": "Retrieves a list of resources, possibly filtered.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [
+      "part"
+    ],
+    "all_parameters": [
+      "id",
+      "maxResults",
+      "pageToken",
+      "parentId",
+      "part",
+      "textFormat"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube.force-ssl"
+    ]
+  },
+  {
+    "api": "youtube_data_v3",
+    "service_name": "youtube",
+    "method_id": "youtube.comments.markAsSpam",
+    "tool_name": "youtube_data_v3_comments_markasspam",
+    "resource_chain": [
+      "comments"
+    ],
+    "method_name": "markAsSpam",
+    "http_method": "POST",
+    "path": "youtube/v3/comments/markAsSpam",
+    "description": "Expresses the caller's opinion that one or more comments should be flagged as spam.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [
+      "id"
+    ],
+    "all_parameters": [
+      "id"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube.force-ssl"
+    ]
+  },
+  {
+    "api": "youtube_data_v3",
+    "service_name": "youtube",
+    "method_id": "youtube.comments.setModerationStatus",
+    "tool_name": "youtube_data_v3_comments_setmoderationstatus",
+    "resource_chain": [
+      "comments"
+    ],
+    "method_name": "setModerationStatus",
+    "http_method": "POST",
+    "path": "youtube/v3/comments/setModerationStatus",
+    "description": "Sets the moderation status of one or more comments.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [
+      "id",
+      "moderationStatus"
+    ],
+    "all_parameters": [
+      "banAuthor",
+      "id",
+      "moderationStatus"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube.force-ssl"
+    ]
+  },
+  {
+    "api": "youtube_data_v3",
+    "service_name": "youtube",
+    "method_id": "youtube.comments.update",
+    "tool_name": "youtube_data_v3_comments_update",
+    "resource_chain": [
+      "comments"
+    ],
+    "method_name": "update",
+    "http_method": "PUT",
+    "path": "youtube/v3/comments",
+    "description": "Updates an existing resource.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [
+      "part"
+    ],
+    "all_parameters": [
+      "part"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube.force-ssl"
+    ]
+  },
+  {
+    "api": "youtube_data_v3",
+    "service_name": "youtube",
+    "method_id": "youtube.commentThreads.insert",
+    "tool_name": "youtube_data_v3_commentthreads_insert",
+    "resource_chain": [
+      "commentThreads"
+    ],
+    "method_name": "insert",
+    "http_method": "POST",
+    "path": "youtube/v3/commentThreads",
+    "description": "Inserts a new resource into this collection.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [
+      "part"
+    ],
+    "all_parameters": [
+      "part"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube.force-ssl"
+    ]
+  },
+  {
+    "api": "youtube_data_v3",
+    "service_name": "youtube",
+    "method_id": "youtube.commentThreads.list",
+    "tool_name": "youtube_data_v3_commentthreads_list",
+    "resource_chain": [
+      "commentThreads"
+    ],
+    "method_name": "list",
+    "http_method": "GET",
+    "path": "youtube/v3/commentThreads",
+    "description": "Retrieves a list of resources, possibly filtered.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [
+      "part"
+    ],
+    "all_parameters": [
+      "allThreadsRelatedToChannelId",
+      "channelId",
+      "id",
+      "maxResults",
+      "moderationStatus",
+      "order",
+      "pageToken",
+      "part",
+      "postId",
+      "searchTerms",
+      "textFormat",
+      "videoId"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube.force-ssl"
+    ]
+  },
+  {
+    "api": "youtube_data_v3",
+    "service_name": "youtube",
+    "method_id": "youtube.i18nLanguages.list",
+    "tool_name": "youtube_data_v3_i18nlanguages_list",
+    "resource_chain": [
+      "i18nLanguages"
+    ],
+    "method_name": "list",
+    "http_method": "GET",
+    "path": "youtube/v3/i18nLanguages",
+    "description": "Retrieves a list of resources, possibly filtered.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [
+      "part"
+    ],
+    "all_parameters": [
+      "hl",
+      "part"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube",
+      "https://www.googleapis.com/auth/youtube.force-ssl",
+      "https://www.googleapis.com/auth/youtube.readonly",
+      "https://www.googleapis.com/auth/youtubepartner"
+    ]
+  },
+  {
+    "api": "youtube_data_v3",
+    "service_name": "youtube",
+    "method_id": "youtube.i18nRegions.list",
+    "tool_name": "youtube_data_v3_i18nregions_list",
+    "resource_chain": [
+      "i18nRegions"
+    ],
+    "method_name": "list",
+    "http_method": "GET",
+    "path": "youtube/v3/i18nRegions",
+    "description": "Retrieves a list of resources, possibly filtered.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [
+      "part"
+    ],
+    "all_parameters": [
+      "hl",
+      "part"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube",
+      "https://www.googleapis.com/auth/youtube.force-ssl",
+      "https://www.googleapis.com/auth/youtube.readonly",
+      "https://www.googleapis.com/auth/youtubepartner"
+    ]
+  },
+  {
+    "api": "youtube_data_v3",
+    "service_name": "youtube",
+    "method_id": "youtube.liveBroadcasts.bind",
+    "tool_name": "youtube_data_v3_livebroadcasts_bind",
+    "resource_chain": [
+      "liveBroadcasts"
+    ],
+    "method_name": "bind",
+    "http_method": "POST",
+    "path": "youtube/v3/liveBroadcasts/bind",
+    "description": "Bind a broadcast to a stream.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [
+      "id",
+      "part"
+    ],
+    "all_parameters": [
+      "id",
+      "onBehalfOfContentOwner",
+      "onBehalfOfContentOwnerChannel",
+      "part",
+      "streamId"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube",
+      "https://www.googleapis.com/auth/youtube.force-ssl"
+    ]
+  },
+  {
+    "api": "youtube_data_v3",
+    "service_name": "youtube",
+    "method_id": "youtube.liveBroadcasts.delete",
+    "tool_name": "youtube_data_v3_livebroadcasts_delete",
+    "resource_chain": [
+      "liveBroadcasts"
+    ],
+    "method_name": "delete",
+    "http_method": "DELETE",
+    "path": "youtube/v3/liveBroadcasts",
+    "description": "Delete a given broadcast.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [
+      "id"
+    ],
+    "all_parameters": [
+      "id",
+      "onBehalfOfContentOwner",
+      "onBehalfOfContentOwnerChannel"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube",
+      "https://www.googleapis.com/auth/youtube.force-ssl"
+    ]
+  },
+  {
+    "api": "youtube_data_v3",
+    "service_name": "youtube",
+    "method_id": "youtube.liveBroadcasts.insert",
+    "tool_name": "youtube_data_v3_livebroadcasts_insert",
+    "resource_chain": [
+      "liveBroadcasts"
+    ],
+    "method_name": "insert",
+    "http_method": "POST",
+    "path": "youtube/v3/liveBroadcasts",
+    "description": "Inserts a new stream for the authenticated user.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [
+      "part"
+    ],
+    "all_parameters": [
+      "onBehalfOfContentOwner",
+      "onBehalfOfContentOwnerChannel",
+      "part"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube",
+      "https://www.googleapis.com/auth/youtube.force-ssl"
+    ]
+  },
+  {
+    "api": "youtube_data_v3",
+    "service_name": "youtube",
+    "method_id": "youtube.liveBroadcasts.insertCuepoint",
+    "tool_name": "youtube_data_v3_livebroadcasts_insertcuepoint",
+    "resource_chain": [
+      "liveBroadcasts"
+    ],
+    "method_name": "insertCuepoint",
+    "http_method": "POST",
+    "path": "youtube/v3/liveBroadcasts/cuepoint",
+    "description": "Insert cuepoints in a broadcast",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [],
+    "all_parameters": [
+      "id",
+      "onBehalfOfContentOwner",
+      "onBehalfOfContentOwnerChannel",
+      "part"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube",
+      "https://www.googleapis.com/auth/youtube.force-ssl",
+      "https://www.googleapis.com/auth/youtubepartner"
+    ]
+  },
+  {
+    "api": "youtube_data_v3",
+    "service_name": "youtube",
+    "method_id": "youtube.liveBroadcasts.list",
+    "tool_name": "youtube_data_v3_livebroadcasts_list",
+    "resource_chain": [
+      "liveBroadcasts"
+    ],
+    "method_name": "list",
+    "http_method": "GET",
+    "path": "youtube/v3/liveBroadcasts",
+    "description": "Retrieve the list of broadcasts associated with the given channel.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [
+      "part"
+    ],
+    "all_parameters": [
+      "broadcastStatus",
+      "broadcastType",
+      "id",
+      "maxResults",
+      "mine",
+      "onBehalfOfContentOwner",
+      "onBehalfOfContentOwnerChannel",
+      "pageToken",
+      "part"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube",
+      "https://www.googleapis.com/auth/youtube.force-ssl",
+      "https://www.googleapis.com/auth/youtube.readonly"
+    ]
+  },
+  {
+    "api": "youtube_data_v3",
+    "service_name": "youtube",
+    "method_id": "youtube.liveBroadcasts.transition",
+    "tool_name": "youtube_data_v3_livebroadcasts_transition",
+    "resource_chain": [
+      "liveBroadcasts"
+    ],
+    "method_name": "transition",
+    "http_method": "POST",
+    "path": "youtube/v3/liveBroadcasts/transition",
+    "description": "Transition a broadcast to a given status.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [
+      "broadcastStatus",
+      "id",
+      "part"
+    ],
+    "all_parameters": [
+      "broadcastStatus",
+      "id",
+      "onBehalfOfContentOwner",
+      "onBehalfOfContentOwnerChannel",
+      "part"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube",
+      "https://www.googleapis.com/auth/youtube.force-ssl"
+    ]
+  },
+  {
+    "api": "youtube_data_v3",
+    "service_name": "youtube",
+    "method_id": "youtube.liveBroadcasts.update",
+    "tool_name": "youtube_data_v3_livebroadcasts_update",
+    "resource_chain": [
+      "liveBroadcasts"
+    ],
+    "method_name": "update",
+    "http_method": "PUT",
+    "path": "youtube/v3/liveBroadcasts",
+    "description": "Updates an existing broadcast for the authenticated user.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [
+      "part"
+    ],
+    "all_parameters": [
+      "onBehalfOfContentOwner",
+      "onBehalfOfContentOwnerChannel",
+      "part"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube",
+      "https://www.googleapis.com/auth/youtube.force-ssl"
+    ]
+  },
+  {
+    "api": "youtube_data_v3",
+    "service_name": "youtube",
+    "method_id": "youtube.liveChatBans.delete",
+    "tool_name": "youtube_data_v3_livechatbans_delete",
+    "resource_chain": [
+      "liveChatBans"
+    ],
+    "method_name": "delete",
+    "http_method": "DELETE",
+    "path": "youtube/v3/liveChat/bans",
+    "description": "Deletes a chat ban.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [
+      "id"
+    ],
+    "all_parameters": [
+      "id"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube",
+      "https://www.googleapis.com/auth/youtube.force-ssl"
+    ]
+  },
+  {
+    "api": "youtube_data_v3",
+    "service_name": "youtube",
+    "method_id": "youtube.liveChatBans.insert",
+    "tool_name": "youtube_data_v3_livechatbans_insert",
+    "resource_chain": [
+      "liveChatBans"
+    ],
+    "method_name": "insert",
+    "http_method": "POST",
+    "path": "youtube/v3/liveChat/bans",
+    "description": "Inserts a new resource into this collection.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [
+      "part"
+    ],
+    "all_parameters": [
+      "part"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube",
+      "https://www.googleapis.com/auth/youtube.force-ssl"
+    ]
+  },
+  {
+    "api": "youtube_data_v3",
+    "service_name": "youtube",
+    "method_id": "youtube.liveChatMessages.delete",
+    "tool_name": "youtube_data_v3_livechatmessages_delete",
+    "resource_chain": [
+      "liveChatMessages"
+    ],
+    "method_name": "delete",
+    "http_method": "DELETE",
+    "path": "youtube/v3/liveChat/messages",
+    "description": "Deletes a chat message.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [
+      "id"
+    ],
+    "all_parameters": [
+      "id"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube",
+      "https://www.googleapis.com/auth/youtube.force-ssl"
+    ]
+  },
+  {
+    "api": "youtube_data_v3",
+    "service_name": "youtube",
+    "method_id": "youtube.liveChatMessages.insert",
+    "tool_name": "youtube_data_v3_livechatmessages_insert",
+    "resource_chain": [
+      "liveChatMessages"
+    ],
+    "method_name": "insert",
+    "http_method": "POST",
+    "path": "youtube/v3/liveChat/messages",
+    "description": "Inserts a new resource into this collection.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [
+      "part"
+    ],
+    "all_parameters": [
+      "part"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube",
+      "https://www.googleapis.com/auth/youtube.force-ssl"
+    ]
+  },
+  {
+    "api": "youtube_data_v3",
+    "service_name": "youtube",
+    "method_id": "youtube.liveChatMessages.list",
+    "tool_name": "youtube_data_v3_livechatmessages_list",
+    "resource_chain": [
+      "liveChatMessages"
+    ],
+    "method_name": "list",
+    "http_method": "GET",
+    "path": "youtube/v3/liveChat/messages",
+    "description": "Retrieves a list of resources, possibly filtered.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [
+      "liveChatId",
+      "part"
+    ],
+    "all_parameters": [
+      "hl",
+      "liveChatId",
+      "maxResults",
+      "pageToken",
+      "part",
+      "profileImageSize"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube",
+      "https://www.googleapis.com/auth/youtube.force-ssl",
+      "https://www.googleapis.com/auth/youtube.readonly"
+    ]
+  },
+  {
+    "api": "youtube_data_v3",
+    "service_name": "youtube",
+    "method_id": "youtube.liveChatMessages.transition",
+    "tool_name": "youtube_data_v3_livechatmessages_transition",
+    "resource_chain": [
+      "liveChatMessages"
+    ],
+    "method_name": "transition",
+    "http_method": "POST",
+    "path": "youtube/v3/liveChat/messages/transition",
+    "description": "Transition a durable chat event.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [],
+    "all_parameters": [
+      "id",
+      "status"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube",
+      "https://www.googleapis.com/auth/youtube.force-ssl"
+    ]
+  },
+  {
+    "api": "youtube_data_v3",
+    "service_name": "youtube",
+    "method_id": "youtube.liveChatModerators.delete",
+    "tool_name": "youtube_data_v3_livechatmoderators_delete",
+    "resource_chain": [
+      "liveChatModerators"
+    ],
+    "method_name": "delete",
+    "http_method": "DELETE",
+    "path": "youtube/v3/liveChat/moderators",
+    "description": "Deletes a chat moderator.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [
+      "id"
+    ],
+    "all_parameters": [
+      "id"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube",
+      "https://www.googleapis.com/auth/youtube.force-ssl"
+    ]
+  },
+  {
+    "api": "youtube_data_v3",
+    "service_name": "youtube",
+    "method_id": "youtube.liveChatModerators.insert",
+    "tool_name": "youtube_data_v3_livechatmoderators_insert",
+    "resource_chain": [
+      "liveChatModerators"
+    ],
+    "method_name": "insert",
+    "http_method": "POST",
+    "path": "youtube/v3/liveChat/moderators",
+    "description": "Inserts a new resource into this collection.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [
+      "part"
+    ],
+    "all_parameters": [
+      "part"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube",
+      "https://www.googleapis.com/auth/youtube.force-ssl"
+    ]
+  },
+  {
+    "api": "youtube_data_v3",
+    "service_name": "youtube",
+    "method_id": "youtube.liveChatModerators.list",
+    "tool_name": "youtube_data_v3_livechatmoderators_list",
+    "resource_chain": [
+      "liveChatModerators"
+    ],
+    "method_name": "list",
+    "http_method": "GET",
+    "path": "youtube/v3/liveChat/moderators",
+    "description": "Retrieves a list of resources, possibly filtered.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [
+      "liveChatId",
+      "part"
+    ],
+    "all_parameters": [
+      "liveChatId",
+      "maxResults",
+      "pageToken",
+      "part"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube",
+      "https://www.googleapis.com/auth/youtube.force-ssl",
+      "https://www.googleapis.com/auth/youtube.readonly"
+    ]
+  },
+  {
+    "api": "youtube_data_v3",
+    "service_name": "youtube",
+    "method_id": "youtube.liveStreams.delete",
+    "tool_name": "youtube_data_v3_livestreams_delete",
+    "resource_chain": [
+      "liveStreams"
+    ],
+    "method_name": "delete",
+    "http_method": "DELETE",
+    "path": "youtube/v3/liveStreams",
+    "description": "Deletes an existing stream for the authenticated user.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [
+      "id"
+    ],
+    "all_parameters": [
+      "id",
+      "onBehalfOfContentOwner",
+      "onBehalfOfContentOwnerChannel"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube",
+      "https://www.googleapis.com/auth/youtube.force-ssl"
+    ]
+  },
+  {
+    "api": "youtube_data_v3",
+    "service_name": "youtube",
+    "method_id": "youtube.liveStreams.insert",
+    "tool_name": "youtube_data_v3_livestreams_insert",
+    "resource_chain": [
+      "liveStreams"
+    ],
+    "method_name": "insert",
+    "http_method": "POST",
+    "path": "youtube/v3/liveStreams",
+    "description": "Inserts a new stream for the authenticated user.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [
+      "part"
+    ],
+    "all_parameters": [
+      "onBehalfOfContentOwner",
+      "onBehalfOfContentOwnerChannel",
+      "part"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube",
+      "https://www.googleapis.com/auth/youtube.force-ssl"
+    ]
+  },
+  {
+    "api": "youtube_data_v3",
+    "service_name": "youtube",
+    "method_id": "youtube.liveStreams.list",
+    "tool_name": "youtube_data_v3_livestreams_list",
+    "resource_chain": [
+      "liveStreams"
+    ],
+    "method_name": "list",
+    "http_method": "GET",
+    "path": "youtube/v3/liveStreams",
+    "description": "Retrieve the list of streams associated with the given channel. --",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [
+      "part"
+    ],
+    "all_parameters": [
+      "id",
+      "maxResults",
+      "mine",
+      "onBehalfOfContentOwner",
+      "onBehalfOfContentOwnerChannel",
+      "pageToken",
+      "part"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube",
+      "https://www.googleapis.com/auth/youtube.force-ssl",
+      "https://www.googleapis.com/auth/youtube.readonly"
+    ]
+  },
+  {
+    "api": "youtube_data_v3",
+    "service_name": "youtube",
+    "method_id": "youtube.liveStreams.update",
+    "tool_name": "youtube_data_v3_livestreams_update",
+    "resource_chain": [
+      "liveStreams"
+    ],
+    "method_name": "update",
+    "http_method": "PUT",
+    "path": "youtube/v3/liveStreams",
+    "description": "Updates an existing stream for the authenticated user.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [
+      "part"
+    ],
+    "all_parameters": [
+      "onBehalfOfContentOwner",
+      "onBehalfOfContentOwnerChannel",
+      "part"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube",
+      "https://www.googleapis.com/auth/youtube.force-ssl"
+    ]
+  },
+  {
+    "api": "youtube_data_v3",
+    "service_name": "youtube",
+    "method_id": "youtube.members.list",
+    "tool_name": "youtube_data_v3_members_list",
+    "resource_chain": [
+      "members"
+    ],
+    "method_name": "list",
+    "http_method": "GET",
+    "path": "youtube/v3/members",
+    "description": "Retrieves a list of members that match the request criteria for a channel.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [
+      "part"
+    ],
+    "all_parameters": [
+      "filterByMemberChannelId",
+      "hasAccessToLevel",
+      "maxResults",
+      "mode",
+      "pageToken",
+      "part"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube.channel-memberships.creator"
+    ]
+  },
+  {
+    "api": "youtube_data_v3",
+    "service_name": "youtube",
+    "method_id": "youtube.membershipsLevels.list",
+    "tool_name": "youtube_data_v3_membershipslevels_list",
+    "resource_chain": [
+      "membershipsLevels"
+    ],
+    "method_name": "list",
+    "http_method": "GET",
+    "path": "youtube/v3/membershipsLevels",
+    "description": "Retrieves a list of all pricing levels offered by a creator to the fans.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [
+      "part"
+    ],
+    "all_parameters": [
+      "part"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube.channel-memberships.creator"
+    ]
+  },
+  {
+    "api": "youtube_data_v3",
+    "service_name": "youtube",
+    "method_id": "youtube.playlistImages.delete",
+    "tool_name": "youtube_data_v3_playlistimages_delete",
+    "resource_chain": [
+      "playlistImages"
+    ],
+    "method_name": "delete",
+    "http_method": "DELETE",
+    "path": "youtube/v3/playlistImages",
+    "description": "Deletes a resource.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [],
+    "all_parameters": [
+      "id",
+      "onBehalfOfContentOwner"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube",
+      "https://www.googleapis.com/auth/youtube.force-ssl",
+      "https://www.googleapis.com/auth/youtubepartner"
+    ]
+  },
+  {
+    "api": "youtube_data_v3",
+    "service_name": "youtube",
+    "method_id": "youtube.playlistImages.insert",
+    "tool_name": "youtube_data_v3_playlistimages_insert",
+    "resource_chain": [
+      "playlistImages"
+    ],
+    "method_name": "insert",
+    "http_method": "POST",
+    "path": "youtube/v3/playlistImages",
+    "description": "Inserts a new resource into this collection.",
+    "supports_media_upload": true,
+    "supports_media_download": false,
+    "required_parameters": [],
+    "all_parameters": [
+      "onBehalfOfContentOwner",
+      "onBehalfOfContentOwnerChannel",
+      "part"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube",
+      "https://www.googleapis.com/auth/youtube.force-ssl",
+      "https://www.googleapis.com/auth/youtubepartner"
+    ]
+  },
+  {
+    "api": "youtube_data_v3",
+    "service_name": "youtube",
+    "method_id": "youtube.playlistImages.list",
+    "tool_name": "youtube_data_v3_playlistimages_list",
+    "resource_chain": [
+      "playlistImages"
+    ],
+    "method_name": "list",
+    "http_method": "GET",
+    "path": "youtube/v3/playlistImages",
+    "description": "Retrieves a list of resources, possibly filtered.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [],
+    "all_parameters": [
+      "maxResults",
+      "onBehalfOfContentOwner",
+      "onBehalfOfContentOwnerChannel",
+      "pageToken",
+      "parent",
+      "part"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube",
+      "https://www.googleapis.com/auth/youtube.force-ssl",
+      "https://www.googleapis.com/auth/youtube.readonly",
+      "https://www.googleapis.com/auth/youtubepartner"
+    ]
+  },
+  {
+    "api": "youtube_data_v3",
+    "service_name": "youtube",
+    "method_id": "youtube.playlistImages.update",
+    "tool_name": "youtube_data_v3_playlistimages_update",
+    "resource_chain": [
+      "playlistImages"
+    ],
+    "method_name": "update",
+    "http_method": "PUT",
+    "path": "youtube/v3/playlistImages",
+    "description": "Updates an existing resource.",
+    "supports_media_upload": true,
+    "supports_media_download": false,
+    "required_parameters": [],
+    "all_parameters": [
+      "onBehalfOfContentOwner",
+      "part"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube",
+      "https://www.googleapis.com/auth/youtube.force-ssl",
+      "https://www.googleapis.com/auth/youtubepartner"
+    ]
+  },
+  {
+    "api": "youtube_data_v3",
+    "service_name": "youtube",
+    "method_id": "youtube.playlistItems.delete",
+    "tool_name": "youtube_data_v3_playlistitems_delete",
+    "resource_chain": [
+      "playlistItems"
+    ],
+    "method_name": "delete",
+    "http_method": "DELETE",
+    "path": "youtube/v3/playlistItems",
+    "description": "Deletes a resource.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [
+      "id"
+    ],
+    "all_parameters": [
+      "id",
+      "onBehalfOfContentOwner"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube",
+      "https://www.googleapis.com/auth/youtube.force-ssl",
+      "https://www.googleapis.com/auth/youtubepartner"
+    ]
+  },
+  {
+    "api": "youtube_data_v3",
+    "service_name": "youtube",
+    "method_id": "youtube.playlistItems.insert",
+    "tool_name": "youtube_data_v3_playlistitems_insert",
+    "resource_chain": [
+      "playlistItems"
+    ],
+    "method_name": "insert",
+    "http_method": "POST",
+    "path": "youtube/v3/playlistItems",
+    "description": "Inserts a new resource into this collection.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [
+      "part"
+    ],
+    "all_parameters": [
+      "onBehalfOfContentOwner",
+      "part"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube",
+      "https://www.googleapis.com/auth/youtube.force-ssl",
+      "https://www.googleapis.com/auth/youtubepartner"
+    ]
+  },
+  {
+    "api": "youtube_data_v3",
+    "service_name": "youtube",
+    "method_id": "youtube.playlistItems.list",
+    "tool_name": "youtube_data_v3_playlistitems_list",
+    "resource_chain": [
+      "playlistItems"
+    ],
+    "method_name": "list",
+    "http_method": "GET",
+    "path": "youtube/v3/playlistItems",
+    "description": "Retrieves a list of resources, possibly filtered.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [
+      "part"
+    ],
+    "all_parameters": [
+      "id",
+      "maxResults",
+      "onBehalfOfContentOwner",
+      "pageToken",
+      "part",
+      "playlistId",
+      "videoId"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube",
+      "https://www.googleapis.com/auth/youtube.force-ssl",
+      "https://www.googleapis.com/auth/youtube.readonly",
+      "https://www.googleapis.com/auth/youtubepartner"
+    ]
+  },
+  {
+    "api": "youtube_data_v3",
+    "service_name": "youtube",
+    "method_id": "youtube.playlistItems.update",
+    "tool_name": "youtube_data_v3_playlistitems_update",
+    "resource_chain": [
+      "playlistItems"
+    ],
+    "method_name": "update",
+    "http_method": "PUT",
+    "path": "youtube/v3/playlistItems",
+    "description": "Updates an existing resource.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [
+      "part"
+    ],
+    "all_parameters": [
+      "onBehalfOfContentOwner",
+      "part"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube",
+      "https://www.googleapis.com/auth/youtube.force-ssl",
+      "https://www.googleapis.com/auth/youtubepartner"
+    ]
+  },
+  {
+    "api": "youtube_data_v3",
+    "service_name": "youtube",
+    "method_id": "youtube.playlists.delete",
+    "tool_name": "youtube_data_v3_playlists_delete",
+    "resource_chain": [
+      "playlists"
+    ],
+    "method_name": "delete",
+    "http_method": "DELETE",
+    "path": "youtube/v3/playlists",
+    "description": "Deletes a resource.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [
+      "id"
+    ],
+    "all_parameters": [
+      "id",
+      "onBehalfOfContentOwner"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube",
+      "https://www.googleapis.com/auth/youtube.force-ssl",
+      "https://www.googleapis.com/auth/youtubepartner"
+    ]
+  },
+  {
+    "api": "youtube_data_v3",
+    "service_name": "youtube",
+    "method_id": "youtube.playlists.insert",
+    "tool_name": "youtube_data_v3_playlists_insert",
+    "resource_chain": [
+      "playlists"
+    ],
+    "method_name": "insert",
+    "http_method": "POST",
+    "path": "youtube/v3/playlists",
+    "description": "Inserts a new resource into this collection.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [
+      "part"
+    ],
+    "all_parameters": [
+      "onBehalfOfContentOwner",
+      "onBehalfOfContentOwnerChannel",
+      "part"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube",
+      "https://www.googleapis.com/auth/youtube.force-ssl",
+      "https://www.googleapis.com/auth/youtubepartner"
+    ]
+  },
+  {
+    "api": "youtube_data_v3",
+    "service_name": "youtube",
+    "method_id": "youtube.playlists.list",
+    "tool_name": "youtube_data_v3_playlists_list",
+    "resource_chain": [
+      "playlists"
+    ],
+    "method_name": "list",
+    "http_method": "GET",
+    "path": "youtube/v3/playlists",
+    "description": "Retrieves a list of resources, possibly filtered.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [
+      "part"
+    ],
+    "all_parameters": [
+      "channelId",
+      "hl",
+      "id",
+      "maxResults",
+      "mine",
+      "onBehalfOfContentOwner",
+      "onBehalfOfContentOwnerChannel",
+      "pageToken",
+      "part"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube",
+      "https://www.googleapis.com/auth/youtube.force-ssl",
+      "https://www.googleapis.com/auth/youtube.readonly",
+      "https://www.googleapis.com/auth/youtubepartner"
+    ]
+  },
+  {
+    "api": "youtube_data_v3",
+    "service_name": "youtube",
+    "method_id": "youtube.playlists.update",
+    "tool_name": "youtube_data_v3_playlists_update",
+    "resource_chain": [
+      "playlists"
+    ],
+    "method_name": "update",
+    "http_method": "PUT",
+    "path": "youtube/v3/playlists",
+    "description": "Updates an existing resource.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [
+      "part"
+    ],
+    "all_parameters": [
+      "onBehalfOfContentOwner",
+      "part"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube",
+      "https://www.googleapis.com/auth/youtube.force-ssl",
+      "https://www.googleapis.com/auth/youtubepartner"
+    ]
+  },
+  {
+    "api": "youtube_data_v3",
+    "service_name": "youtube",
+    "method_id": "youtube.search.list",
+    "tool_name": "youtube_data_v3_search_list",
+    "resource_chain": [
+      "search"
+    ],
+    "method_name": "list",
+    "http_method": "GET",
+    "path": "youtube/v3/search",
+    "description": "Retrieves a list of search resources",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [
+      "part"
+    ],
+    "all_parameters": [
+      "channelId",
+      "channelType",
+      "eventType",
+      "forContentOwner",
+      "forDeveloper",
+      "forMine",
+      "location",
+      "locationRadius",
+      "maxResults",
+      "onBehalfOfContentOwner",
+      "order",
+      "pageToken",
+      "part",
+      "publishedAfter",
+      "publishedBefore",
+      "q",
+      "regionCode",
+      "relevanceLanguage",
+      "safeSearch",
+      "topicId",
+      "type",
+      "videoCaption",
+      "videoCategoryId",
+      "videoDefinition",
+      "videoDimension",
+      "videoDuration",
+      "videoEmbeddable",
+      "videoLicense",
+      "videoPaidProductPlacement",
+      "videoSyndicated",
+      "videoType"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube",
+      "https://www.googleapis.com/auth/youtube.force-ssl",
+      "https://www.googleapis.com/auth/youtube.readonly",
+      "https://www.googleapis.com/auth/youtubepartner"
+    ]
+  },
+  {
+    "api": "youtube_data_v3",
+    "service_name": "youtube",
+    "method_id": "youtube.subscriptions.delete",
+    "tool_name": "youtube_data_v3_subscriptions_delete",
+    "resource_chain": [
+      "subscriptions"
+    ],
+    "method_name": "delete",
+    "http_method": "DELETE",
+    "path": "youtube/v3/subscriptions",
+    "description": "Deletes a resource.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [
+      "id"
+    ],
+    "all_parameters": [
+      "id"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube",
+      "https://www.googleapis.com/auth/youtube.force-ssl",
+      "https://www.googleapis.com/auth/youtubepartner"
+    ]
+  },
+  {
+    "api": "youtube_data_v3",
+    "service_name": "youtube",
+    "method_id": "youtube.subscriptions.insert",
+    "tool_name": "youtube_data_v3_subscriptions_insert",
+    "resource_chain": [
+      "subscriptions"
+    ],
+    "method_name": "insert",
+    "http_method": "POST",
+    "path": "youtube/v3/subscriptions",
+    "description": "Inserts a new resource into this collection.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [
+      "part"
+    ],
+    "all_parameters": [
+      "part"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube",
+      "https://www.googleapis.com/auth/youtube.force-ssl",
+      "https://www.googleapis.com/auth/youtubepartner"
+    ]
+  },
+  {
+    "api": "youtube_data_v3",
+    "service_name": "youtube",
+    "method_id": "youtube.subscriptions.list",
+    "tool_name": "youtube_data_v3_subscriptions_list",
+    "resource_chain": [
+      "subscriptions"
+    ],
+    "method_name": "list",
+    "http_method": "GET",
+    "path": "youtube/v3/subscriptions",
+    "description": "Retrieves a list of resources, possibly filtered.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [
+      "part"
+    ],
+    "all_parameters": [
+      "channelId",
+      "forChannelId",
+      "id",
+      "maxResults",
+      "mine",
+      "myRecentSubscribers",
+      "mySubscribers",
+      "onBehalfOfContentOwner",
+      "onBehalfOfContentOwnerChannel",
+      "order",
+      "pageToken",
+      "part"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube",
+      "https://www.googleapis.com/auth/youtube.force-ssl",
+      "https://www.googleapis.com/auth/youtube.readonly",
+      "https://www.googleapis.com/auth/youtubepartner"
+    ]
+  },
+  {
+    "api": "youtube_data_v3",
+    "service_name": "youtube",
+    "method_id": "youtube.superChatEvents.list",
+    "tool_name": "youtube_data_v3_superchatevents_list",
+    "resource_chain": [
+      "superChatEvents"
+    ],
+    "method_name": "list",
+    "http_method": "GET",
+    "path": "youtube/v3/superChatEvents",
+    "description": "Retrieves a list of resources, possibly filtered.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [
+      "part"
+    ],
+    "all_parameters": [
+      "hl",
+      "maxResults",
+      "pageToken",
+      "part"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube",
+      "https://www.googleapis.com/auth/youtube.force-ssl",
+      "https://www.googleapis.com/auth/youtube.readonly"
+    ]
+  },
+  {
+    "api": "youtube_data_v3",
+    "service_name": "youtube",
+    "method_id": "youtube.tests.insert",
+    "tool_name": "youtube_data_v3_tests_insert",
+    "resource_chain": [
+      "tests"
+    ],
+    "method_name": "insert",
+    "http_method": "POST",
+    "path": "youtube/v3/tests",
+    "description": "POST method.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [
+      "part"
+    ],
+    "all_parameters": [
+      "externalChannelId",
+      "onBehalfOfContentOwnerChannel",
+      "part"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube.readonly"
+    ]
+  },
+  {
+    "api": "youtube_data_v3",
+    "service_name": "youtube",
+    "method_id": "youtube.thirdPartyLinks.delete",
+    "tool_name": "youtube_data_v3_thirdpartylinks_delete",
+    "resource_chain": [
+      "thirdPartyLinks"
+    ],
+    "method_name": "delete",
+    "http_method": "DELETE",
+    "path": "youtube/v3/thirdPartyLinks",
+    "description": "Deletes a resource.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [
+      "linkingToken",
+      "type"
+    ],
+    "all_parameters": [
+      "externalChannelId",
+      "linkingToken",
+      "part",
+      "type"
+    ],
+    "scopes": []
+  },
+  {
+    "api": "youtube_data_v3",
+    "service_name": "youtube",
+    "method_id": "youtube.thirdPartyLinks.insert",
+    "tool_name": "youtube_data_v3_thirdpartylinks_insert",
+    "resource_chain": [
+      "thirdPartyLinks"
+    ],
+    "method_name": "insert",
+    "http_method": "POST",
+    "path": "youtube/v3/thirdPartyLinks",
+    "description": "Inserts a new resource into this collection.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [
+      "part"
+    ],
+    "all_parameters": [
+      "externalChannelId",
+      "part"
+    ],
+    "scopes": []
+  },
+  {
+    "api": "youtube_data_v3",
+    "service_name": "youtube",
+    "method_id": "youtube.thirdPartyLinks.list",
+    "tool_name": "youtube_data_v3_thirdpartylinks_list",
+    "resource_chain": [
+      "thirdPartyLinks"
+    ],
+    "method_name": "list",
+    "http_method": "GET",
+    "path": "youtube/v3/thirdPartyLinks",
+    "description": "Retrieves a list of resources, possibly filtered.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [
+      "part"
+    ],
+    "all_parameters": [
+      "externalChannelId",
+      "linkingToken",
+      "part",
+      "type"
+    ],
+    "scopes": []
+  },
+  {
+    "api": "youtube_data_v3",
+    "service_name": "youtube",
+    "method_id": "youtube.thirdPartyLinks.update",
+    "tool_name": "youtube_data_v3_thirdpartylinks_update",
+    "resource_chain": [
+      "thirdPartyLinks"
+    ],
+    "method_name": "update",
+    "http_method": "PUT",
+    "path": "youtube/v3/thirdPartyLinks",
+    "description": "Updates an existing resource.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [
+      "part"
+    ],
+    "all_parameters": [
+      "externalChannelId",
+      "part"
+    ],
+    "scopes": []
+  },
+  {
+    "api": "youtube_data_v3",
+    "service_name": "youtube",
+    "method_id": "youtube.thumbnails.set",
+    "tool_name": "youtube_data_v3_thumbnails_set",
+    "resource_chain": [
+      "thumbnails"
+    ],
+    "method_name": "set",
+    "http_method": "POST",
+    "path": "youtube/v3/thumbnails/set",
+    "description": "As this is not an insert in a strict sense (it supports uploading/setting of a thumbnail for multiple videos, which doesn't result in creation of a single resource), I use a custom verb here.",
+    "supports_media_upload": true,
+    "supports_media_download": false,
+    "required_parameters": [
+      "videoId"
+    ],
+    "all_parameters": [
+      "onBehalfOfContentOwner",
+      "videoId"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube",
+      "https://www.googleapis.com/auth/youtube.force-ssl",
+      "https://www.googleapis.com/auth/youtube.upload",
+      "https://www.googleapis.com/auth/youtubepartner"
+    ]
+  },
+  {
+    "api": "youtube_data_v3",
+    "service_name": "youtube",
+    "method_id": "youtube.videoAbuseReportReasons.list",
+    "tool_name": "youtube_data_v3_videoabusereportreasons_list",
+    "resource_chain": [
+      "videoAbuseReportReasons"
+    ],
+    "method_name": "list",
+    "http_method": "GET",
+    "path": "youtube/v3/videoAbuseReportReasons",
+    "description": "Retrieves a list of resources, possibly filtered.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [
+      "part"
+    ],
+    "all_parameters": [
+      "hl",
+      "part"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube",
+      "https://www.googleapis.com/auth/youtube.force-ssl",
+      "https://www.googleapis.com/auth/youtube.readonly"
+    ]
+  },
+  {
+    "api": "youtube_data_v3",
+    "service_name": "youtube",
+    "method_id": "youtube.videoCategories.list",
+    "tool_name": "youtube_data_v3_videocategories_list",
+    "resource_chain": [
+      "videoCategories"
+    ],
+    "method_name": "list",
+    "http_method": "GET",
+    "path": "youtube/v3/videoCategories",
+    "description": "Retrieves a list of resources, possibly filtered.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [
+      "part"
+    ],
+    "all_parameters": [
+      "hl",
+      "id",
+      "part",
+      "regionCode"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube",
+      "https://www.googleapis.com/auth/youtube.force-ssl",
+      "https://www.googleapis.com/auth/youtube.readonly",
+      "https://www.googleapis.com/auth/youtubepartner"
+    ]
+  },
+  {
+    "api": "youtube_data_v3",
+    "service_name": "youtube",
+    "method_id": "youtube.videos.batchGetStats",
+    "tool_name": "youtube_data_v3_videos_batchgetstats",
+    "resource_chain": [
+      "videos"
+    ],
+    "method_name": "batchGetStats",
+    "http_method": "GET",
+    "path": "youtube/v3/videos:batchGetStats",
+    "description": "Retrieves a batch of VideoStat resources, possibly filtered. BatchGetStats is intentionally not atomic to provide a better user experience.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [],
+    "all_parameters": [
+      "id",
+      "onBehalfOfContentOwner",
+      "part"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube",
+      "https://www.googleapis.com/auth/youtube.force-ssl",
+      "https://www.googleapis.com/auth/youtube.readonly",
+      "https://www.googleapis.com/auth/youtubepartner"
+    ]
+  },
+  {
+    "api": "youtube_data_v3",
+    "service_name": "youtube",
+    "method_id": "youtube.videos.delete",
+    "tool_name": "youtube_data_v3_videos_delete",
+    "resource_chain": [
+      "videos"
+    ],
+    "method_name": "delete",
+    "http_method": "DELETE",
+    "path": "youtube/v3/videos",
+    "description": "Deletes a resource.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [
+      "id"
+    ],
+    "all_parameters": [
+      "id",
+      "onBehalfOfContentOwner"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube",
+      "https://www.googleapis.com/auth/youtube.force-ssl",
+      "https://www.googleapis.com/auth/youtubepartner"
+    ]
+  },
+  {
+    "api": "youtube_data_v3",
+    "service_name": "youtube",
+    "method_id": "youtube.videos.getRating",
+    "tool_name": "youtube_data_v3_videos_getrating",
+    "resource_chain": [
+      "videos"
+    ],
+    "method_name": "getRating",
+    "http_method": "GET",
+    "path": "youtube/v3/videos/getRating",
+    "description": "Retrieves the ratings that the authorized user gave to a list of specified videos.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [
+      "id"
+    ],
+    "all_parameters": [
+      "id",
+      "onBehalfOfContentOwner"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube",
+      "https://www.googleapis.com/auth/youtube.force-ssl",
+      "https://www.googleapis.com/auth/youtube.readonly",
+      "https://www.googleapis.com/auth/youtubepartner"
+    ]
+  },
+  {
+    "api": "youtube_data_v3",
+    "service_name": "youtube",
+    "method_id": "youtube.videos.insert",
+    "tool_name": "youtube_data_v3_videos_insert",
+    "resource_chain": [
+      "videos"
+    ],
+    "method_name": "insert",
+    "http_method": "POST",
+    "path": "youtube/v3/videos",
+    "description": "Inserts a new resource into this collection.",
+    "supports_media_upload": true,
+    "supports_media_download": false,
+    "required_parameters": [
+      "part"
+    ],
+    "all_parameters": [
+      "autoLevels",
+      "notifySubscribers",
+      "onBehalfOfContentOwner",
+      "onBehalfOfContentOwnerChannel",
+      "part",
+      "stabilize"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube",
+      "https://www.googleapis.com/auth/youtube.force-ssl",
+      "https://www.googleapis.com/auth/youtube.upload",
+      "https://www.googleapis.com/auth/youtubepartner"
+    ]
+  },
+  {
+    "api": "youtube_data_v3",
+    "service_name": "youtube",
+    "method_id": "youtube.videos.list",
+    "tool_name": "youtube_data_v3_videos_list",
+    "resource_chain": [
+      "videos"
+    ],
+    "method_name": "list",
+    "http_method": "GET",
+    "path": "youtube/v3/videos",
+    "description": "Retrieves a list of resources, possibly filtered.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [
+      "part"
+    ],
+    "all_parameters": [
+      "chart",
+      "hl",
+      "id",
+      "locale",
+      "maxHeight",
+      "maxResults",
+      "maxWidth",
+      "myRating",
+      "onBehalfOfContentOwner",
+      "pageToken",
+      "part",
+      "regionCode",
+      "videoCategoryId"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube",
+      "https://www.googleapis.com/auth/youtube.force-ssl",
+      "https://www.googleapis.com/auth/youtube.readonly",
+      "https://www.googleapis.com/auth/youtubepartner"
+    ]
+  },
+  {
+    "api": "youtube_data_v3",
+    "service_name": "youtube",
+    "method_id": "youtube.videos.rate",
+    "tool_name": "youtube_data_v3_videos_rate",
+    "resource_chain": [
+      "videos"
+    ],
+    "method_name": "rate",
+    "http_method": "POST",
+    "path": "youtube/v3/videos/rate",
+    "description": "Adds a like or dislike rating to a video or removes a rating from a video.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [
+      "id",
+      "rating"
+    ],
+    "all_parameters": [
+      "id",
+      "rating"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube",
+      "https://www.googleapis.com/auth/youtube.force-ssl",
+      "https://www.googleapis.com/auth/youtubepartner"
+    ]
+  },
+  {
+    "api": "youtube_data_v3",
+    "service_name": "youtube",
+    "method_id": "youtube.videos.reportAbuse",
+    "tool_name": "youtube_data_v3_videos_reportabuse",
+    "resource_chain": [
+      "videos"
+    ],
+    "method_name": "reportAbuse",
+    "http_method": "POST",
+    "path": "youtube/v3/videos/reportAbuse",
+    "description": "Report abuse for a video.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [],
+    "all_parameters": [
+      "onBehalfOfContentOwner"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube",
+      "https://www.googleapis.com/auth/youtube.force-ssl",
+      "https://www.googleapis.com/auth/youtubepartner"
+    ]
+  },
+  {
+    "api": "youtube_data_v3",
+    "service_name": "youtube",
+    "method_id": "youtube.videos.update",
+    "tool_name": "youtube_data_v3_videos_update",
+    "resource_chain": [
+      "videos"
+    ],
+    "method_name": "update",
+    "http_method": "PUT",
+    "path": "youtube/v3/videos",
+    "description": "Updates an existing resource.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [
+      "part"
+    ],
+    "all_parameters": [
+      "onBehalfOfContentOwner",
+      "part"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube",
+      "https://www.googleapis.com/auth/youtube.force-ssl",
+      "https://www.googleapis.com/auth/youtubepartner"
+    ]
+  },
+  {
+    "api": "youtube_data_v3",
+    "service_name": "youtube",
+    "method_id": "youtube.videoTrainability.get",
+    "tool_name": "youtube_data_v3_videotrainability_get",
+    "resource_chain": [
+      "videoTrainability"
+    ],
+    "method_name": "get",
+    "http_method": "GET",
+    "path": "youtube/v3/videoTrainability",
+    "description": "Returns the trainability status of a video.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [],
+    "all_parameters": [
+      "id"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube",
+      "https://www.googleapis.com/auth/youtube.force-ssl",
+      "https://www.googleapis.com/auth/youtube.readonly",
+      "https://www.googleapis.com/auth/youtubepartner"
+    ]
+  },
+  {
+    "api": "youtube_data_v3",
+    "service_name": "youtube",
+    "method_id": "youtube.watermarks.set",
+    "tool_name": "youtube_data_v3_watermarks_set",
+    "resource_chain": [
+      "watermarks"
+    ],
+    "method_name": "set",
+    "http_method": "POST",
+    "path": "youtube/v3/watermarks/set",
+    "description": "Allows upload of watermark image and setting it for a channel.",
+    "supports_media_upload": true,
+    "supports_media_download": false,
+    "required_parameters": [
+      "channelId"
+    ],
+    "all_parameters": [
+      "channelId",
+      "onBehalfOfContentOwner"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube",
+      "https://www.googleapis.com/auth/youtube.force-ssl",
+      "https://www.googleapis.com/auth/youtube.upload",
+      "https://www.googleapis.com/auth/youtubepartner"
+    ]
+  },
+  {
+    "api": "youtube_data_v3",
+    "service_name": "youtube",
+    "method_id": "youtube.watermarks.unset",
+    "tool_name": "youtube_data_v3_watermarks_unset",
+    "resource_chain": [
+      "watermarks"
+    ],
+    "method_name": "unset",
+    "http_method": "POST",
+    "path": "youtube/v3/watermarks/unset",
+    "description": "Allows removal of channel watermark.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [
+      "channelId"
+    ],
+    "all_parameters": [
+      "channelId",
+      "onBehalfOfContentOwner"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube",
+      "https://www.googleapis.com/auth/youtube.force-ssl",
+      "https://www.googleapis.com/auth/youtubepartner"
+    ]
+  },
+  {
+    "api": "youtube_data_v3",
+    "service_name": "youtube",
+    "method_id": "youtube.youtube.v3.liveChat.messages.stream",
+    "tool_name": "youtube_data_v3_youtube_v3_livechat_messages_stream",
+    "resource_chain": [
+      "youtube",
+      "v3",
+      "liveChat",
+      "messages"
+    ],
+    "method_name": "stream",
+    "http_method": "GET",
+    "path": "youtube/v3/liveChat/messages/stream",
+    "description": "Allows a user to load live chat through a server-streamed RPC.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [],
+    "all_parameters": [
+      "hl",
+      "liveChatId",
+      "maxResults",
+      "pageToken",
+      "part",
+      "profileImageSize"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube",
+      "https://www.googleapis.com/auth/youtube.force-ssl",
+      "https://www.googleapis.com/auth/youtube.readonly"
+    ]
+  },
+  {
+    "api": "youtube_reporting_v1",
+    "service_name": "youtubereporting",
+    "method_id": "youtubereporting.jobs.create",
+    "tool_name": "youtube_reporting_v1_jobs_create",
+    "resource_chain": [
+      "jobs"
+    ],
+    "method_name": "create",
+    "http_method": "POST",
+    "path": "v1/jobs",
+    "description": "Creates a job and returns it.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [],
+    "all_parameters": [
+      "onBehalfOfContentOwner"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/yt-analytics-monetary.readonly",
+      "https://www.googleapis.com/auth/yt-analytics.readonly"
+    ]
+  },
+  {
+    "api": "youtube_reporting_v1",
+    "service_name": "youtubereporting",
+    "method_id": "youtubereporting.jobs.delete",
+    "tool_name": "youtube_reporting_v1_jobs_delete",
+    "resource_chain": [
+      "jobs"
+    ],
+    "method_name": "delete",
+    "http_method": "DELETE",
+    "path": "v1/jobs/{jobId}",
+    "description": "Deletes a job.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [
+      "jobId"
+    ],
+    "all_parameters": [
+      "jobId",
+      "onBehalfOfContentOwner"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/yt-analytics-monetary.readonly",
+      "https://www.googleapis.com/auth/yt-analytics.readonly"
+    ]
+  },
+  {
+    "api": "youtube_reporting_v1",
+    "service_name": "youtubereporting",
+    "method_id": "youtubereporting.jobs.get",
+    "tool_name": "youtube_reporting_v1_jobs_get",
+    "resource_chain": [
+      "jobs"
+    ],
+    "method_name": "get",
+    "http_method": "GET",
+    "path": "v1/jobs/{jobId}",
+    "description": "Gets a job.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [
+      "jobId"
+    ],
+    "all_parameters": [
+      "jobId",
+      "onBehalfOfContentOwner"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/yt-analytics-monetary.readonly",
+      "https://www.googleapis.com/auth/yt-analytics.readonly"
+    ]
+  },
+  {
+    "api": "youtube_reporting_v1",
+    "service_name": "youtubereporting",
+    "method_id": "youtubereporting.jobs.list",
+    "tool_name": "youtube_reporting_v1_jobs_list",
+    "resource_chain": [
+      "jobs"
+    ],
+    "method_name": "list",
+    "http_method": "GET",
+    "path": "v1/jobs",
+    "description": "Lists jobs.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [],
+    "all_parameters": [
+      "includeSystemManaged",
+      "onBehalfOfContentOwner",
+      "pageSize",
+      "pageToken"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/yt-analytics-monetary.readonly",
+      "https://www.googleapis.com/auth/yt-analytics.readonly"
+    ]
+  },
+  {
+    "api": "youtube_reporting_v1",
+    "service_name": "youtubereporting",
+    "method_id": "youtubereporting.jobs.reports.get",
+    "tool_name": "youtube_reporting_v1_jobs_reports_get",
+    "resource_chain": [
+      "jobs",
+      "reports"
+    ],
+    "method_name": "get",
+    "http_method": "GET",
+    "path": "v1/jobs/{jobId}/reports/{reportId}",
+    "description": "Gets the metadata of a specific report.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [
+      "jobId",
+      "reportId"
+    ],
+    "all_parameters": [
+      "jobId",
+      "onBehalfOfContentOwner",
+      "reportId"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/yt-analytics-monetary.readonly",
+      "https://www.googleapis.com/auth/yt-analytics.readonly"
+    ]
+  },
+  {
+    "api": "youtube_reporting_v1",
+    "service_name": "youtubereporting",
+    "method_id": "youtubereporting.jobs.reports.list",
+    "tool_name": "youtube_reporting_v1_jobs_reports_list",
+    "resource_chain": [
+      "jobs",
+      "reports"
+    ],
+    "method_name": "list",
+    "http_method": "GET",
+    "path": "v1/jobs/{jobId}/reports",
+    "description": "Lists reports created by a specific job. Returns NOT_FOUND if the job does not exist.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [
+      "jobId"
+    ],
+    "all_parameters": [
+      "createdAfter",
+      "jobId",
+      "onBehalfOfContentOwner",
+      "pageSize",
+      "pageToken",
+      "startTimeAtOrAfter",
+      "startTimeBefore"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/yt-analytics-monetary.readonly",
+      "https://www.googleapis.com/auth/yt-analytics.readonly"
+    ]
+  },
+  {
+    "api": "youtube_reporting_v1",
+    "service_name": "youtubereporting",
+    "method_id": "youtubereporting.media.download",
+    "tool_name": "youtube_reporting_v1_media_download",
+    "resource_chain": [
+      "media"
+    ],
+    "method_name": "download",
+    "http_method": "GET",
+    "path": "v1/media/{+resourceName}",
+    "description": "Method for media download. Download is supported on the URI `/v1/media/{+name}?alt=media`.",
+    "supports_media_upload": false,
+    "supports_media_download": true,
+    "required_parameters": [
+      "resourceName"
+    ],
+    "all_parameters": [
+      "resourceName"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/yt-analytics-monetary.readonly",
+      "https://www.googleapis.com/auth/yt-analytics.readonly"
+    ]
+  },
+  {
+    "api": "youtube_reporting_v1",
+    "service_name": "youtubereporting",
+    "method_id": "youtubereporting.reportTypes.list",
+    "tool_name": "youtube_reporting_v1_reporttypes_list",
+    "resource_chain": [
+      "reportTypes"
+    ],
+    "method_name": "list",
+    "http_method": "GET",
+    "path": "v1/reportTypes",
+    "description": "Lists report types.",
+    "supports_media_upload": false,
+    "supports_media_download": false,
+    "required_parameters": [],
+    "all_parameters": [
+      "includeSystemManaged",
+      "onBehalfOfContentOwner",
+      "pageSize",
+      "pageToken"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/yt-analytics-monetary.readonly",
+      "https://www.googleapis.com/auth/yt-analytics.readonly"
+    ]
+  }
+]
