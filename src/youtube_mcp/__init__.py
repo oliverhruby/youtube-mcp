@@ -1,20 +1,35 @@
 import json
 import os
+import secrets
 import sys
-from datetime import datetime, timezone
+import threading
+import time
+import webbrowser
+from dataclasses import asdict, dataclass
+from datetime import UTC, datetime, timezone
+from http.server import BaseHTTPRequestHandler, HTTPServer
 from importlib import resources
+from typing import Any
+from urllib.parse import parse_qs, urlencode, urlparse
 
+import httpx
 from google.auth.transport.requests import Request
 from google.oauth2.credentials import Credentials
 from googleapiclient.discovery import build
 
 try:
     from mcp.server.fastmcp import FastMCP
+    from mcp.server.auth.provider import AccessToken, TokenVerifier
+    from mcp.server.auth.settings import AuthSettings
 except Exception:
     FastMCP = None
+    AccessToken = None
+    TokenVerifier = None
+    AuthSettings = None
 
 MCP_TRANSPORT = os.environ.get("MCP_TRANSPORT", "stdio")
 MCP_HOST = os.environ.get("MCP_HOST", "0.0.0.0")
+MCP_API_KEY = os.environ.get("MCP_API_KEY", "")
 _MCP_PORT_RAW = os.environ.get("MCP_PORT", "8000")
 
 try:
@@ -25,8 +40,35 @@ except ValueError:
 else:
     _MCP_PORT_ERROR = None
 
+class _StaticApiKeyTokenVerifier:
+    """Simple bearer token verifier backed by MCP_API_KEY."""
+
+    def __init__(self, api_key: str):
+        self.api_key = api_key
+
+    async def verify_token(self, token: str):
+        if token != self.api_key:
+            return None
+        return AccessToken(token=token, client_id="mcp-api-key", scopes=["mcp"])  # type: ignore[misc]
+
+
 if FastMCP:
-    server = FastMCP("youtube", host=MCP_HOST, port=MCP_PORT)
+    token_verifier = None
+    auth_settings = None
+    if MCP_API_KEY:
+        token_verifier = _StaticApiKeyTokenVerifier(MCP_API_KEY)
+        auth_settings = AuthSettings(
+            issuer_url=f"http://{MCP_HOST}:{MCP_PORT}",
+            resource_server_url=f"http://{MCP_HOST}:{MCP_PORT}",
+            required_scopes=["mcp"],
+        )
+    server = FastMCP(
+        "youtube",
+        host=MCP_HOST,
+        port=MCP_PORT,
+        auth=auth_settings,
+        token_verifier=token_verifier,
+    )
 else:
     server = None
 
@@ -37,6 +79,50 @@ _SERVICE_BUILDERS = {
 }
 _SERVICE_CACHE = {}
 GENERATED_TOOL_NAMES = []
+
+OAUTH_AUTH_URL = "https://accounts.google.com/o/oauth2/v2/auth"
+OAUTH_TOKEN_URL = "https://oauth2.googleapis.com/token"
+OAUTH_SCOPES = [
+    "https://www.googleapis.com/auth/youtube.readonly",
+    "https://www.googleapis.com/auth/youtube",
+    "https://www.googleapis.com/auth/yt-analytics.readonly",
+    "https://www.googleapis.com/auth/yt-analytics-monetary.readonly",
+]
+OAUTH_REDIRECT_PORT = 8080
+OAUTH_REDIRECT_HOST = "127.0.0.1"
+OAUTH_REDIRECT_URI = f"http://{OAUTH_REDIRECT_HOST}:{OAUTH_REDIRECT_PORT}/callback"
+OAUTH_CALLBACK_TIMEOUT_SECONDS = 300
+
+
+@dataclass
+class SessionState:
+    access_token: str
+    refresh_token: str
+    client_id: str
+    client_secret: str
+    expires_at: str | None = None
+    scopes: list[str] | None = None
+
+
+@dataclass
+class OAuthPendingState:
+    state: str
+    client_id: str
+    client_secret: str
+    redirect_uri: str
+    scopes: list[str]
+    created_at: str
+    expires_at: str
+    authorization_code: str | None = None
+    error: str | None = None
+    error_description: str | None = None
+    listener_started: bool = False
+    listener_address: str | None = None
+
+
+_SESSION: SessionState | None = None
+_PENDING_OAUTH: dict[str, OAuthPendingState] = {}
+_PENDING_OAUTH_LOCK = threading.Lock()
 
 
 def _tool(fn):
@@ -81,6 +167,95 @@ def _parse_json_object(raw: str, label: str) -> dict:
     return parsed
 
 
+def _expire_pending_oauth() -> None:
+    now = datetime.now(UTC)
+    stale: list[str] = []
+    with _PENDING_OAUTH_LOCK:
+        for state, pending in _PENDING_OAUTH.items():
+            if datetime.fromisoformat(pending.expires_at) < now:
+                stale.append(state)
+        for s in stale:
+            _PENDING_OAUTH.pop(s, None)
+
+
+def _start_callback_listener(state_value: str, redirect_uri: str) -> dict:
+    parsed = urlparse(redirect_uri)
+    if parsed.scheme != "http" or parsed.hostname not in {"127.0.0.1", "localhost"}:
+        return {"started": False, "reason": "callback listener supports only localhost http redirect URIs"}
+
+    host = parsed.hostname
+    port = parsed.port
+    path = parsed.path or "/"
+    if port is None:
+        return {"started": False, "reason": "redirect_uri must include explicit port"}
+
+    class OAuthCallbackHandler(BaseHTTPRequestHandler):
+        def do_GET(self):
+            request = urlparse(self.path)
+            if request.path != path:
+                self.send_response(404)
+                self.end_headers()
+                self.wfile.write(b"Not found")
+                return
+
+            query = parse_qs(request.query)
+            callback_state = (query.get("state") or [""])[0]
+            code = (query.get("code") or [""])[0]
+            error = (query.get("error") or [""])[0]
+            error_description = (query.get("error_description") or [""])[0]
+
+            with _PENDING_OAUTH_LOCK:
+                pending = _PENDING_OAUTH.get(callback_state)
+                if pending:
+                    pending.authorization_code = code or None
+                    pending.error = error or None
+                    pending.error_description = error_description or None
+
+            self.send_response(200)
+            self.send_header("Content-Type", "text/html; charset=utf-8")
+            self.end_headers()
+            if error:
+                self.wfile.write(b"<html><body><h2>YouTube authorization failed.</h2><p>You can close this window.</p></body></html>")
+            else:
+                self.wfile.write(b"<html><body><h2>YouTube authorization received.</h2><p>You can return to your MCP client.</p></body></html>")
+
+            threading.Thread(target=self.server.shutdown, daemon=True).start()
+
+        def log_message(self, format, *args):
+            return
+
+    def _run_server():
+        try:
+            server = HTTPServer((host, port), OAuthCallbackHandler)
+            server.timeout = float(OAUTH_CALLBACK_TIMEOUT_SECONDS)
+            server.handle_request()
+            server.server_close()
+        except OSError:
+            with _PENDING_OAUTH_LOCK:
+                pending = _PENDING_OAUTH.get(state_value)
+                if pending:
+                    pending.error = "callback_listener_error"
+                    pending.error_description = "Could not bind local callback listener; port may be in use."
+
+    threading.Thread(target=_run_server, daemon=True).start()
+    return {"started": True, "listener_address": f"{host}:{port}{path}"}
+
+
+def _request_form(url: str, data: dict[str, str]) -> dict:
+    with httpx.Client(timeout=30.0) as client:
+        response = client.post(url=url, data=data)
+    out: dict = {
+        "ok": response.is_success,
+        "status_code": response.status_code,
+        "url": url,
+    }
+    try:
+        out["data"] = response.json()
+    except json.JSONDecodeError:
+        out["text"] = response.text
+    return out
+
+
 def _load_operation_specs() -> list[dict]:
     text = resources.files("youtube_mcp").joinpath("data/youtube_api_operations.json").read_text(encoding="utf-8")
     return json.loads(text)
@@ -99,6 +274,18 @@ def _api_counts() -> dict:
 
 
 def _oauth_credentials() -> Credentials | None:
+    if _SESSION is not None:
+        creds = Credentials(
+            token=_SESSION.access_token,
+            refresh_token=_SESSION.refresh_token,
+            token_uri=OAUTH_TOKEN_URL,
+            client_id=_SESSION.client_id,
+            client_secret=_SESSION.client_secret,
+        )
+        if creds.expired or not creds.token:
+            creds.refresh(Request())
+        return creds
+
     client_id = os.environ.get("YOUTUBE_CLIENT_ID", "")
     client_secret = os.environ.get("YOUTUBE_CLIENT_SECRET", "")
     refresh_token = os.environ.get("YOUTUBE_REFRESH_TOKEN", "")
@@ -107,7 +294,7 @@ def _oauth_credentials() -> Credentials | None:
     creds = Credentials(
         token=None,
         refresh_token=refresh_token,
-        token_uri="https://oauth2.googleapis.com/token",
+        token_uri=OAUTH_TOKEN_URL,
         client_id=client_id,
         client_secret=client_secret,
     )
@@ -213,23 +400,236 @@ def health() -> dict:
 
 @_tool
 def auth_status() -> dict:
-    """Report whether auth-related environment variables are configured."""
+    """Report current authentication state."""
 
     def go():
-        configured = {
-            "youtube_api_key": bool(os.environ.get("YOUTUBE_API_KEY")),
-            "youtube_client_id": bool(os.environ.get("YOUTUBE_CLIENT_ID")),
-            "youtube_client_secret": bool(os.environ.get("YOUTUBE_CLIENT_SECRET")),
-            "youtube_refresh_token": bool(os.environ.get("YOUTUBE_REFRESH_TOKEN")),
-        }
-        oauth_ready = (
-            configured["youtube_client_id"]
-            and configured["youtube_client_secret"]
-            and configured["youtube_refresh_token"]
-        )
-        return ok({"configured": configured, "oauth_ready": oauth_ready})
+        env_api_key = bool(os.environ.get("YOUTUBE_API_KEY"))
+        env_client_id = bool(os.environ.get("YOUTUBE_CLIENT_ID"))
+        env_client_secret = bool(os.environ.get("YOUTUBE_CLIENT_SECRET"))
+        env_refresh_token = bool(os.environ.get("YOUTUBE_REFRESH_TOKEN"))
+
+        session_active = _SESSION is not None
+        session_safe = None
+        if session_active:
+            session_safe = asdict(_SESSION)
+            session_safe["access_token"] = "***redacted***"
+            session_safe["refresh_token"] = "***redacted***"
+
+        _expire_pending_oauth()
+        return ok({
+            "session_active": session_active,
+            "session": session_safe,
+            "env_configured": {
+                "api_key": env_api_key,
+                "client_id": env_client_id,
+                "client_secret": env_client_secret,
+                "refresh_token": env_refresh_token,
+            },
+            "pending_oauth_states": sorted(_PENDING_OAUTH.keys()),
+        })
 
     return _run(go, "auth_status")
+
+
+@_tool
+def auth_start(
+    client_id: str = "",
+    client_secret: str = "",
+    scopes_csv: str = "",
+    open_browser: bool = False,
+    auto_listen_callback: bool = True,
+) -> dict:
+    """Start OAuth authorization by generating Google consent URL and optional localhost callback listener.
+
+    Provide client_id and client_secret (or set YOUTUBE_CLIENT_ID/YOUTUBE_CLIENT_SECRET env vars).
+    Default scopes include YouTube read/write and analytics access.
+    """
+    final_client_id = client_id.strip() or os.environ.get("YOUTUBE_CLIENT_ID", "").strip()
+    final_client_secret = client_secret.strip() or os.environ.get("YOUTUBE_CLIENT_SECRET", "").strip()
+    if not final_client_id:
+        raise RuntimeError("client_id is required (argument or YOUTUBE_CLIENT_ID env var)")
+    if not final_client_secret:
+        raise RuntimeError("client_secret is required (argument or YOUTUBE_CLIENT_SECRET env var)")
+
+    _expire_pending_oauth()
+    state_value = secrets.token_urlsafe(24)
+
+    if scopes_csv.strip():
+        scope_list = [s.strip() for s in scopes_csv.split(",") if s.strip()]
+    else:
+        scope_list = list(OAUTH_SCOPES)
+
+    redirect_uri = OAUTH_REDIRECT_URI
+    now = datetime.now(UTC)
+    expires = now.timestamp() + OAUTH_CALLBACK_TIMEOUT_SECONDS
+
+    pending = OAuthPendingState(
+        state=state_value,
+        client_id=final_client_id,
+        client_secret=final_client_secret,
+        redirect_uri=redirect_uri,
+        scopes=scope_list,
+        created_at=now.isoformat(),
+        expires_at=datetime.fromtimestamp(expires, UTC).isoformat(),
+    )
+    with _PENDING_OAUTH_LOCK:
+        _PENDING_OAUTH[state_value] = pending
+
+    params = {
+        "response_type": "code",
+        "client_id": final_client_id,
+        "redirect_uri": redirect_uri,
+        "state": state_value,
+        "scope": " ".join(scope_list),
+        "access_type": "offline",
+        "prompt": "consent",
+    }
+    auth_url = f"{OAUTH_AUTH_URL}?{urlencode(params)}"
+
+    listener = {"started": False}
+    if auto_listen_callback:
+        listener = _start_callback_listener(state_value=state_value, redirect_uri=redirect_uri)
+        with _PENDING_OAUTH_LOCK:
+            current = _PENDING_OAUTH.get(state_value)
+            if current and listener.get("started"):
+                current.listener_started = True
+                current.listener_address = listener.get("listener_address")
+
+    browser_opened = False
+    if open_browser:
+        browser_opened = webbrowser.open(auth_url)
+
+    return {
+        "ok": True,
+        "state": state_value,
+        "authorization_url": auth_url,
+        "browser_opened": browser_opened,
+        "listener": listener,
+        "expires_at": pending.expires_at,
+        "next": "Complete consent in browser, then call auth_poll(state) and auth_finish(state).",
+    }
+
+
+@_tool
+def auth_poll(state: str) -> dict:
+    """Poll pending OAuth state for callback status and auth code availability."""
+    _expire_pending_oauth()
+    with _PENDING_OAUTH_LOCK:
+        pending = _PENDING_OAUTH.get(state)
+    if pending is None:
+        return {"ok": False, "state": state, "found": False}
+    return {
+        "ok": True,
+        "found": True,
+        "state": state,
+        "has_code": pending.authorization_code is not None,
+        "error": pending.error,
+        "error_description": pending.error_description,
+        "listener_started": pending.listener_started,
+        "listener_address": pending.listener_address,
+        "expires_at": pending.expires_at,
+    }
+
+
+@_tool
+def auth_finish(state: str, code: str = "") -> dict:
+    """Exchange authorization code for tokens and activate session."""
+    _expire_pending_oauth()
+    with _PENDING_OAUTH_LOCK:
+        pending = _PENDING_OAUTH.get(state)
+    if pending is None:
+        raise RuntimeError("OAuth state not found or expired. Start again with auth_start.")
+    if pending.error:
+        raise RuntimeError(f"OAuth callback returned error: {pending.error} ({pending.error_description or 'no details'})")
+
+    final_code = code.strip() or (pending.authorization_code or "")
+    if not final_code:
+        raise RuntimeError("Authorization code not available yet. Call auth_poll or provide code directly.")
+
+    token_response = _request_form(
+        OAUTH_TOKEN_URL,
+        {
+            "grant_type": "authorization_code",
+            "code": final_code,
+            "redirect_uri": pending.redirect_uri,
+            "client_id": pending.client_id,
+            "client_secret": pending.client_secret,
+        },
+    )
+    if not token_response["ok"]:
+        return {"ok": False, "state": state, "token_exchange": token_response}
+
+    data = token_response.get("data", {})
+    access_token = data.get("access_token")
+    refresh_token = data.get("refresh_token")
+    if not access_token:
+        raise RuntimeError("Token exchange succeeded without access_token.")
+    if not refresh_token:
+        raise RuntimeError("Token exchange succeeded without refresh_token. Ensure access_type=offline and prompt=consent.")
+
+    expires_in = data.get("expires_in")
+    expires_at = None
+    if isinstance(expires_in, int):
+        expires_at = datetime.fromtimestamp(time.time() + expires_in, UTC).isoformat()
+
+    global _SESSION
+    _SESSION = SessionState(
+        access_token=access_token,
+        refresh_token=refresh_token,
+        client_id=pending.client_id,
+        client_secret=pending.client_secret,
+        expires_at=expires_at,
+        scopes=pending.scopes,
+    )
+
+    with _PENDING_OAUTH_LOCK:
+        _PENDING_OAUTH.pop(state, None)
+
+    _SERVICE_CACHE.clear()
+
+    return {
+        "ok": True,
+        "authenticated": True,
+        "expires_at": expires_at,
+        "scopes": pending.scopes,
+    }
+
+
+@_tool
+def auth_refresh() -> dict:
+    """Refresh access token using the session's refresh token."""
+    if _SESSION is None:
+        raise RuntimeError("No active session. Authenticate first with auth_start/auth_finish.")
+
+    creds = Credentials(
+        token=_SESSION.access_token,
+        refresh_token=_SESSION.refresh_token,
+        token_uri=OAUTH_TOKEN_URL,
+        client_id=_SESSION.client_id,
+        client_secret=_SESSION.client_secret,
+    )
+    creds.refresh(Request())
+
+    _SESSION.access_token = creds.token
+    if creds.expiry:
+        _SESSION.expires_at = creds.expiry.isoformat()
+
+    return {
+        "ok": True,
+        "authenticated": True,
+        "expires_at": _SESSION.expires_at,
+    }
+
+
+@_tool
+def auth_clear() -> dict:
+    """Clear active session and pending OAuth states from memory."""
+    global _SESSION
+    _SESSION = None
+    with _PENDING_OAUTH_LOCK:
+        _PENDING_OAUTH.clear()
+    _SERVICE_CACHE.clear()
+    return {"ok": True, "authenticated": False}
 
 
 @_tool
