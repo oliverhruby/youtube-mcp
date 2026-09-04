@@ -69,15 +69,3 @@ jobs:
 
           asyncio.run(main())
           PY
-
-  coverage-drift:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v7
-
-      - uses: actions/setup-python@v7
-        with:
-          python-version: "3.12"
-
-      - name: Verify discovery doc coverage
-        run: python scripts/check_coverage.py

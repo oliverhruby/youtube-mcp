@@ -66,6 +66,6 @@ Required baseline checks:
 - python compile + install sanity
 - unit tests (`pytest -m "not live"`)
 - docker MCP handshake smoke test (expects >=100 tools)
-- discovery doc coverage drift check (`scripts/check_coverage.py`)
+- discovery doc coverage drift check (`scripts/check_coverage.py`, standalone workflow)
 - dependency audit
 - container scan
