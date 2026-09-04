@@ -2,10 +2,10 @@
 
 [![PyPI version](https://img.shields.io/pypi/v/youtube-mcp-full.svg)](https://pypi.org/project/youtube-mcp-full/)
 [![Downloads](https://img.shields.io/pypi/dm/youtube-mcp-full.svg)](https://pypi.org/project/youtube-mcp-full/)
-[![Quality gates](https://img.shields.io/github/actions/workflow/status/oliverhruby/youtube-mcp/quality-gates.yml.svg)](https://github.com/oliverhruby/youtube-mcp/actions/workflows/quality-gates.yml)
-[![Security](https://img.shields.io/github/actions/workflow/status/oliverhruby/youtube-mcp/security.yml.svg)](https://github.com/oliverhruby/youtube-mcp/actions/workflows/security.yml)
-[![Container security](https://img.shields.io/github/actions/workflow/status/oliverhruby/youtube-mcp/container-security.yml.svg)](https://github.com/oliverhruby/youtube-mcp/actions/workflows/container-security.yml)
-[![Coverage drift](https://img.shields.io/github/actions/workflow/status/oliverhruby/youtube-mcp/coverage-drift.yml.svg)](https://github.com/oliverhruby/youtube-mcp/actions/workflows/coverage-drift.yml)
+[![Quality gates](https://img.shields.io/github/actions/workflow/status/oliverhruby/youtube-mcp/quality-gates.yml.svg?label=quality%20gates)](https://github.com/oliverhruby/youtube-mcp/actions/workflows/quality-gates.yml)
+[![Security](https://img.shields.io/github/actions/workflow/status/oliverhruby/youtube-mcp/security.yml.svg?label=security)](https://github.com/oliverhruby/youtube-mcp/actions/workflows/security.yml)
+[![Container security](https://img.shields.io/github/actions/workflow/status/oliverhruby/youtube-mcp/container-security.yml.svg?label=container%20security)](https://github.com/oliverhruby/youtube-mcp/actions/workflows/container-security.yml)
+[![Coverage drift](https://img.shields.io/github/actions/workflow/status/oliverhruby/youtube-mcp/coverage-drift.yml.svg?label=coverage%20drift)](https://github.com/oliverhruby/youtube-mcp/actions/workflows/coverage-drift.yml)
 
 A Model Context Protocol (MCP) server that provides near 1:1 coverage of the
 YouTube Data API v3, YouTube Analytics API, and YouTube Reporting API as MCP
