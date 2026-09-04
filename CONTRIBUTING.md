@@ -144,7 +144,7 @@ python scripts/check_coverage.py
 
 ## Upstream coverage drift
 
-Unlike edupage-mcp (which wraps a Python library), youtube-mcp generates tools
-directly from Google's discovery documents. The coverage check fetches the live
-discovery docs and compares against the generated matrix, so it catches new API
-methods as soon as Google publishes them.
+youtube-mcp generates tools directly from Google's discovery documents. The
+coverage check fetches the live discovery docs and compares against the
+generated matrix, so it catches new API methods as soon as Google publishes
+them.
