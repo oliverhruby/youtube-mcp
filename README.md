@@ -1,7 +1,6 @@
 # youtube-mcp-full
 
 [![GitHub release](https://img.shields.io/github/v/release/oliverhruby/youtube-mcp.svg?label=release)](https://github.com/oliverhruby/youtube-mcp/releases)
-[![Downloads](https://img.shields.io/pypi/dm/youtube-mcp-full.svg)](https://pypi.org/project/youtube-mcp-full/)
 [![Quality gates](https://img.shields.io/github/actions/workflow/status/oliverhruby/youtube-mcp/quality-gates.yml.svg?label=quality%20gates)](https://github.com/oliverhruby/youtube-mcp/actions/workflows/quality-gates.yml)
 [![Security](https://img.shields.io/github/actions/workflow/status/oliverhruby/youtube-mcp/security.yml.svg?label=security)](https://github.com/oliverhruby/youtube-mcp/actions/workflows/security.yml)
 [![Container security](https://img.shields.io/github/actions/workflow/status/oliverhruby/youtube-mcp/container-security.yml.svg?label=container%20security)](https://github.com/oliverhruby/youtube-mcp/actions/workflows/container-security.yml)
