@@ -1,4 +1,4 @@
-# AGENTS.md - youtube-mcp-full
+# AGENTS.md
 
 Guidance for maintainers and coding agents working on this repository.
 
