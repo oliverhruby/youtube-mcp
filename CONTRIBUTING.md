@@ -101,22 +101,22 @@ environments to avoid global package conflicts.
 Version source of truth is `pyproject.toml`.
 
 - Tag format: `vX.Y.Z`
-- PyPI publish: `.github/workflows/publish.yml` (OIDC trusted publishing)
-- GitHub release notes: `.github/workflows/release.yml` (auto-generated)
-- GHCR image publish: `.github/workflows/publish-container.yml`
+- PyPI publish: [.github/workflows/publish.yml](.github/workflows/publish.yml) (OIDC trusted publishing)
+- GitHub release notes: [.github/workflows/release.yml](.github/workflows/release.yml) (auto-generated)
+- GHCR image publish: [.github/workflows/publish-container.yml](.github/workflows/publish-container.yml)
 
 Tag/version mismatch checks are enforced in publish and container workflows
 via `scripts/check_tag_matches_version.py`.
 
 ## CI quality gates
 
-`main` branch requires these checks:
+`main` branch requires these checks (defined in the corresponding GitHub Actions workflow files):
 
-- `quality-gates / python-sanity` — compile + install + unit tests
-- `quality-gates / docker-mcp-smoke` — Docker build + MCP handshake
-- `coverage-drift / coverage-drift` — discovery doc coverage check
-- `security / pip-audit` — dependency vulnerability scan
-- `container-security / trivy-image` — container vulnerability scan
+- **[python-sanity](.github/workflows/quality-gates.yml)** – compile + install + unit tests
+- **[docker-mcp-smoke](.github/workflows/docker-mcp-smoke.yml)** – Docker build + MCP handshake
+- **[coverage-drift](.github/workflows/upstream-coverage.yml)** – discovery doc coverage check
+- **[security / pip-audit](.github/workflows/security.yml)** – dependency vulnerability scan
+- **[container-security / trivy-image](.github/workflows/container-security.yml)** – container vulnerability scan
 
 ## Coverage drift check
 
